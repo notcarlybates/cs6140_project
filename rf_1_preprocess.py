@@ -4,10 +4,10 @@ Preprocessing script for HAR Random Forest pipeline.
 2. Window into 10-second segments
 """
 
+import os
 import numpy as np
 import polars as pl
 from scipy import interpolate
-import scratch_io
 
 INPUT_PATH = "/scratch/bates.car/datasets/paaws_fl_trimmed/"
 OUTPUT_PATH = "/scratch/bates.car/datasets/paaws_fl_preprocessed/"
@@ -95,7 +95,7 @@ def create_windows(df: pl.DataFrame, subject_id: str) -> list[dict]:
 def preprocess_subject(filepath: str, subject_id: str) -> list[dict]:
     """Load, resample, and window a single subject's data."""
     print(f"  Loading {subject_id}...")
-    df = scratch_io.read_csv(filepath)
+    df = pl.read_csv(filepath)
 
     # Drop rows with invalid/unknown activity labels before resampling and windowing
     if "Activity" in df.columns:
@@ -117,11 +117,11 @@ def preprocess_subject(filepath: str, subject_id: str) -> list[dict]:
 
 
 def main():
-    scratch_io.makedirs(OUTPUT_PATH)
+    os.makedirs(OUTPUT_PATH, exist_ok=True)
 
     all_windows = []
 
-    files = sorted([f for f in scratch_io.list_dir(INPUT_PATH) if f.endswith(".csv")])
+    files = sorted([f for f in os.listdir(INPUT_PATH) if f.endswith(".csv")])
     print(f"Found {len(files)} subjects")
     
     for file in files:
@@ -132,7 +132,7 @@ def main():
     print(f"\nTotal windows: {len(all_windows)}")
     
     # Save as numpy arrays
-    scratch_io.save_npy(all_windows, f"{OUTPUT_PATH}windows.npy", allow_pickle=True)
+    np.save(f"{OUTPUT_PATH}windows.npy", all_windows, allow_pickle=True)
     print(f"Saved to {OUTPUT_PATH}windows.npy")
 
 

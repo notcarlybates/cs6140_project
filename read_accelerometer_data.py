@@ -12,11 +12,9 @@ Polars version for faster processing.
 =========================================
 """
 
-import os
 import sys
 import polars as pl
 from datetime import datetime, timedelta
-import scratch_io
 
 
 def parse_header(file: str) -> tuple[datetime, int]:
@@ -42,26 +40,21 @@ def parse_header(file: str) -> tuple[datetime, int]:
 
 def read_data(file: str, agd: bool = False) -> pl.DataFrame:
     """Read actigraph data and add timestamps."""
-    local_file = scratch_io.download_to_temp(file)
-    try:
-        start, sampling_rate = parse_header(local_file)
+    start, sampling_rate = parse_header(file)
 
-        if agd:
-            step_us = 1_000_000  # 1 second in microseconds
-        else:
-            step_us = int(1_000_000 / sampling_rate)
+    if agd:
+        step_us = 1_000_000  # 1 second in microseconds
+    else:
+        step_us = int(1_000_000 / sampling_rate)
 
-        df = pl.read_csv(local_file, skip_rows=10)
+    df = pl.read_csv(file, skip_rows=10)
 
-        # Add timestamps using Polars expressions (much faster than list comprehension)
-        df = df.with_row_index("_idx").with_columns(
-            (pl.lit(start).cast(pl.Datetime("us")) + pl.col("_idx") * timedelta(microseconds=step_us)).alias("Timestamp")
-        ).drop("_idx")
+    # Add timestamps using Polars expressions (much faster than list comprehension)
+    df = df.with_row_index("_idx").with_columns(
+        (pl.lit(start).cast(pl.Datetime("us")) + pl.col("_idx") * timedelta(microseconds=step_us)).alias("Timestamp")
+    ).drop("_idx")
 
-        return df
-    finally:
-        if local_file != file:
-            os.unlink(local_file)
+    return df
 
 
 def add_labels(accel: pl.DataFrame, labels: pl.DataFrame) -> pl.DataFrame:
@@ -346,12 +339,7 @@ def data_to_csv(actigraph_path: str, label_path: str, output_path: str) -> None:
     print(f"  Loaded {len(accel):,} rows")
     
     print(f"Reading labels: {label_path}")
-    local_label = scratch_io.download_to_temp(label_path)
-    try:
-        labels = pl.read_csv(local_label, try_parse_dates=True)
-    finally:
-        if local_label != label_path:
-            os.unlink(local_label)
+    labels = pl.read_csv(label_path, try_parse_dates=True)
     
     # Map activity types to classes
     mapping = MAPPING_SCHEMES["lab_fl_5"]
@@ -364,7 +352,7 @@ def data_to_csv(actigraph_path: str, label_path: str, output_path: str) -> None:
     result = add_labels(accel, labels)
     
     print(f"Writing: {output_path}")
-    scratch_io.write_csv(result, output_path)
+    result.write_csv(output_path)
     print(f"  Done. {len(result):,} rows saved.")
 
 

@@ -3,8 +3,8 @@ Random Forest model training for HAR.
 5-fold subject-wise cross-validation with 7:1:2 train/val/test split.
 """
 
+import os
 import numpy as np
-import scratch_io
 import polars as pl
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import StandardScaler, LabelEncoder
@@ -24,7 +24,7 @@ RANDOM_STATE = 42
 def load_data():
     """Load features and prepare for training."""
     print("Loading features...")
-    df = scratch_io.read_csv(f"{INPUT_PATH}features.csv")
+    df = pl.read_csv(f"{INPUT_PATH}features.csv")
     
     # Get feature columns (exclude metadata)
     meta_cols = ["subject_id", "window_id", "label"]
@@ -181,7 +181,7 @@ def train_and_evaluate(df: pl.DataFrame, feature_cols: list):
 
 
 def main():
-    scratch_io.makedirs(OUTPUT_PATH)
+    os.makedirs(OUTPUT_PATH, exist_ok=True)
     
     df, feature_cols = load_data()
     
@@ -189,7 +189,7 @@ def main():
     
     # Save results
     results_df = pl.DataFrame(results)
-    scratch_io.write_csv(results_df, f"{OUTPUT_PATH}cv_results.csv")
+    results_df.write_csv(f"{OUTPUT_PATH}cv_results.csv")
     print(f"\nResults saved to {OUTPUT_PATH}cv_results.csv")
     
     # Train final model on all data
@@ -210,9 +210,9 @@ def main():
     final_rf.fit(X, y)
     
     # Save model and scaler
-    scratch_io.joblib_dump(final_rf, f"{OUTPUT_PATH}rf_model.joblib")
-    scratch_io.joblib_dump(scaler, f"{OUTPUT_PATH}scaler.joblib")
-    scratch_io.joblib_dump(le, f"{OUTPUT_PATH}label_encoder.joblib")
+    joblib.dump(final_rf, f"{OUTPUT_PATH}rf_model.joblib")
+    joblib.dump(scaler, f"{OUTPUT_PATH}scaler.joblib")
+    joblib.dump(le, f"{OUTPUT_PATH}label_encoder.joblib")
     print(f"Model saved to {OUTPUT_PATH}rf_model.joblib")
     
     # Feature importance
@@ -223,7 +223,7 @@ def main():
     
     print("\nTop 10 Feature Importances:")
     print(importance.head(10))
-    scratch_io.write_csv(importance, f"{OUTPUT_PATH}feature_importance.csv")
+    importance.write_csv(f"{OUTPUT_PATH}feature_importance.csv")
 
 
 if __name__ == "__main__":
