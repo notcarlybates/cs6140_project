@@ -3,8 +3,8 @@ Feature extraction script for HAR Random Forest pipeline.
 Extracts hand-crafted features from 10-second windows.
 """
 
-import os
 import numpy as np
+import scratch_io
 from scipy import stats
 from scipy.fft import fft, fftfreq
 
@@ -102,10 +102,10 @@ def extract_features(window: dict) -> dict:
 
 
 def main():
-    os.makedirs(OUTPUT_PATH, exist_ok=True)
-    
+    scratch_io.makedirs(OUTPUT_PATH)
+
     print("Loading windows...")
-    windows = np.load(f"{INPUT_PATH}windows.npy", allow_pickle=True)
+    windows = scratch_io.load_npy(f"{INPUT_PATH}windows.npy", allow_pickle=True)
     print(f"Loaded {len(windows)} windows")
     
     print("Extracting features...")
@@ -124,13 +124,13 @@ def main():
     print(f"Extracted features from {len(features_list)} windows")
     
     # Convert to numpy structured array and save
-    np.save(f"{OUTPUT_PATH}features.npy", features_list, allow_pickle=True)
+    scratch_io.save_npy(features_list, f"{OUTPUT_PATH}features.npy", allow_pickle=True)
     print(f"Saved to {OUTPUT_PATH}features.npy")
-    
+
     # Also save as CSV for inspection
     import polars as pl
     df = pl.DataFrame(features_list)
-    df.write_csv(f"{OUTPUT_PATH}features.csv")
+    scratch_io.write_csv(df, f"{OUTPUT_PATH}features.csv")
     print(f"Saved to {OUTPUT_PATH}features.csv")
     
     # Print feature summary

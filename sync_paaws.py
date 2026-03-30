@@ -3,9 +3,9 @@ Batch processing script for PAAWS FreeLiving dataset.
 Uses joblib for parallel processing across subjects.
 """
 
-import os
 from joblib import Parallel, delayed
 from read_accelerometer_data import data_to_csv
+import scratch_io
 
 parent_path = "/scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/"
 output_path = "/scratch/bates.car/datasets/paaws_fl_synced/"
@@ -17,9 +17,9 @@ def process_subject(DS: str) -> str:
     label_path = f"{parent_path}{DS}/label/{DS}-Free-label.csv"
     out_file = f"{output_path}{DS}_synced.csv"
     
-    if not os.path.exists(accel_path):
+    if not scratch_io.exists(accel_path):
         return f"[SKIP] {DS}: accel file not found"
-    if not os.path.exists(label_path):
+    if not scratch_io.exists(label_path):
         return f"[SKIP] {DS}: label file not found"
     
     try:
@@ -30,9 +30,9 @@ def process_subject(DS: str) -> str:
 
 
 if __name__ == "__main__":
-    os.makedirs(output_path, exist_ok=True)
-    
-    subjects = os.listdir(parent_path)
+    scratch_io.makedirs(output_path)
+
+    subjects = scratch_io.list_dir(parent_path)
     print(f"Found {len(subjects)} subjects")
     
     # Process in parallel (-1 = use all cores)

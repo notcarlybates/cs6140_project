@@ -4,10 +4,10 @@ Preprocessing script for HAR Random Forest pipeline.
 2. Window into 10-second segments
 """
 
-import os
 import numpy as np
 import polars as pl
 from scipy import interpolate
+import scratch_io
 
 INPUT_PATH = "/scratch/bates.car/datasets/paaws_fl_trimmed/"
 OUTPUT_PATH = "/scratch/bates.car/datasets/paaws_fl_preprocessed/"
@@ -74,9 +74,9 @@ def create_windows(df: pl.DataFrame, subject_id: str) -> list[dict]:
             activity_counts = window_df.group_by("Activity").len().sort("len", descending=True)
             label = activity_counts["Activity"][0]
             
-            # Skip windows with null labels
+            # Skip windows with null labels (should not occur after upstream filtering)
             if label is None:
-                label = "Unknown"
+                continue
         else:
             label = None
         
@@ -95,8 +95,17 @@ def create_windows(df: pl.DataFrame, subject_id: str) -> list[dict]:
 def preprocess_subject(filepath: str, subject_id: str) -> list[dict]:
     """Load, resample, and window a single subject's data."""
     print(f"  Loading {subject_id}...")
-    df = pl.read_csv(filepath)
-    
+    df = scratch_io.read_csv(filepath)
+
+    # Drop rows with invalid/unknown activity labels before resampling and windowing
+    if "Activity" in df.columns:
+        before = len(df)
+        df = df.filter(
+            pl.col("Activity").is_not_null() &
+            ~pl.col("Activity").is_in(["Unknown", "Before_Data_Collection", "After_Data_Collection"])
+        )
+        print(f"  Dropped {before - len(df):,} rows with invalid labels ({len(df):,} remaining)")
+
     print(f"  Resampling from 80Hz to {TARGET_HZ}Hz...")
     df = resample_to_30hz(df, original_hz=80)
     
@@ -108,11 +117,11 @@ def preprocess_subject(filepath: str, subject_id: str) -> list[dict]:
 
 
 def main():
-    os.makedirs(OUTPUT_PATH, exist_ok=True)
-    
+    scratch_io.makedirs(OUTPUT_PATH)
+
     all_windows = []
-    
-    files = sorted([f for f in os.listdir(INPUT_PATH) if f.endswith(".csv")])
+
+    files = sorted([f for f in scratch_io.list_dir(INPUT_PATH) if f.endswith(".csv")])
     print(f"Found {len(files)} subjects")
     
     for file in files:
@@ -123,7 +132,7 @@ def main():
     print(f"\nTotal windows: {len(all_windows)}")
     
     # Save as numpy arrays
-    np.save(f"{OUTPUT_PATH}windows.npy", all_windows, allow_pickle=True)
+    scratch_io.save_npy(all_windows, f"{OUTPUT_PATH}windows.npy", allow_pickle=True)
     print(f"Saved to {OUTPUT_PATH}windows.npy")
 
 
