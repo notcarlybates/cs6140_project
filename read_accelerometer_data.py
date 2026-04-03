@@ -41,19 +41,19 @@ def parse_header(file: str) -> tuple[datetime, int]:
 def read_data(file: str, agd: bool = False) -> pl.DataFrame:
     """Read actigraph data and add timestamps."""
     start, sampling_rate = parse_header(file)
-    
+
     if agd:
         step_us = 1_000_000  # 1 second in microseconds
     else:
         step_us = int(1_000_000 / sampling_rate)
-    
+
     df = pl.read_csv(file, skip_rows=10)
-    
+
     # Add timestamps using Polars expressions (much faster than list comprehension)
     df = df.with_row_index("_idx").with_columns(
         (pl.lit(start).cast(pl.Datetime("us")) + pl.col("_idx") * timedelta(microseconds=step_us)).alias("Timestamp")
     ).drop("_idx")
-    
+
     return df
 
 

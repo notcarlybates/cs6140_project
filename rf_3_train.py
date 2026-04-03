@@ -187,8 +187,14 @@ def main():
     
     results, classes, overall_f1 = train_and_evaluate(df, feature_cols)
     
-    # Save results
-    results_df = pl.DataFrame(results)
+    # Save results (convert subject lists to strings for CSV serialization)
+    results_serializable = [
+        {**r,
+         "train_subjects": ";".join(str(s) for s in r["train_subjects"]),
+         "test_subjects": ";".join(str(s) for s in r["test_subjects"])}
+        for r in results
+    ]
+    results_df = pl.DataFrame(results_serializable)
     results_df.write_csv(f"{OUTPUT_PATH}cv_results.csv")
     print(f"\nResults saved to {OUTPUT_PATH}cv_results.csv")
     

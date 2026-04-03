@@ -103,7 +103,7 @@ def extract_features(window: dict) -> dict:
 
 def main():
     os.makedirs(OUTPUT_PATH, exist_ok=True)
-    
+
     print("Loading windows...")
     windows = np.load(f"{INPUT_PATH}windows.npy", allow_pickle=True)
     print(f"Loaded {len(windows)} windows")
@@ -126,7 +126,7 @@ def main():
     # Convert to numpy structured array and save
     np.save(f"{OUTPUT_PATH}features.npy", features_list, allow_pickle=True)
     print(f"Saved to {OUTPUT_PATH}features.npy")
-    
+
     # Also save as CSV for inspection
     import polars as pl
     df = pl.DataFrame(features_list)

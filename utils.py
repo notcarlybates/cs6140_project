@@ -10,6 +10,7 @@ Email: potter[dot]v[at]northeastern[dot]edu (potter.v@northeastern.edu)
 MAPPING_SCHEMES = {
     # Mapping with 5 activities, can be used with SimFL+Lab or FL data.
     "lab_fl_5": {
+        "Sitting": "Sitting",
         "Sitting_Still": "Sitting",
         "Sitting_With_Movement": "Sitting",
         "Sit_Recline_Talk_Lab": "Sitting",
@@ -17,10 +18,12 @@ MAPPING_SCHEMES = {
         "Sit_Writing_Lab": "Sitting",
         "Sit_Typing_Lab": "Sitting",
 
+        "Standing": "Standing",
         "Standing_Still": "Standing",
         "Standing_With_Movement": "Standing",
         "Stand_Conversation_Lab": "Standing",
 
+        "Lying_Down": "Lying_Down",
         "Lying_Still": "Lying_Down",
         "Lying_With_Movement": "Lying_Down",
         "Lying_On_Back_Lab": "Lying_Down",
@@ -38,11 +41,16 @@ MAPPING_SCHEMES = {
         "Treadmill_3mph_Hands_Pockets_Lab": "Walking",
         "Walking_Fast": "Walking",
         "Walking_Slow": "Walking",
+        "Walking_Up_Stairs": "Walking",
+        "Walking_Down_Stairs": "Walking",
+        "Walking_Treadmill": "Walking",
 
         'Stationary_Biking_300_Lab': 'Biking',
         'Exercising_Gym_Stationary_Bicycle': 'Biking',
         'Cycling_Active_Pedaling_Stationary_Bicycle': 'Biking',
         'Cycling_Active_Pedaling_Regular_Bicycle': 'Biking',
+        'Biking': 'Biking',
+        'Cycling_Active_Pedaling_Stationary_Bike': 'Biking',
     },
 
     # Mapping with 9 activities, can be used with SimFL+Lab or FL data.
