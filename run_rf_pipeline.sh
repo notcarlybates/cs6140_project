@@ -23,9 +23,16 @@ echo "=============================="
 # Activate virtual environment
 source "${SCRIPT_DIR}/.venv/bin/activate"
 
-mkdir -p "${SCRIPT_DIR}/logs"
-
 LOCATIONS=("LeftWrist" "RightAnkle" "RightThigh")
+
+# Create all required directories before anything runs
+mkdir -p "${SCRIPT_DIR}/logs"
+for LOCATION in "${LOCATIONS[@]}"; do
+    mkdir -p "/scratch/bates.car/datasets/paaws_fl_trimmed/${LOCATION}"
+    mkdir -p "/scratch/bates.car/datasets/paaws_fl_preprocessed/${LOCATION}"
+    mkdir -p "/scratch/bates.car/datasets/paaws_fl_features/${LOCATION}"
+    mkdir -p "/scratch/bates.car/datasets/paaws_fl_results/${LOCATION}"
+done
 
 for LOCATION in "${LOCATIONS[@]}"; do
     echo ""

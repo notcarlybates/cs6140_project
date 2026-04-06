@@ -117,6 +117,7 @@ def main():
     print(f"Input path:  {input_path}")
     print(f"Output path: {output_path}")
 
+    os.makedirs(input_path, exist_ok=True)
     os.makedirs(output_path, exist_ok=True)
 
     print("Loading windows...")
