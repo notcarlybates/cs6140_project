@@ -13,8 +13,8 @@ import joblib
 import warnings
 warnings.filterwarnings('ignore')
 
-INPUT_PATH = "/scratch/bates.car/datasets/paaws_fl_features/"
-OUTPUT_PATH = "/scratch/bates.car/datasets/paaws_fl_results/"
+INPUT_PATH = "/scratch/bates.car/datasets/paaws_fl_features/ankle"
+OUTPUT_PATH = "/scratch/bates.car/datasets/paaws_fl_results/ankle"
 
 N_SUBJECTS = 20
 N_FOLDS = 5

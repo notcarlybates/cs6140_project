@@ -8,12 +8,12 @@ from joblib import Parallel, delayed
 from read_accelerometer_data import data_to_csv
 
 parent_path = "/scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/"
-output_path = "/scratch/bates.car/datasets/paaws_fl_synced/"
+output_path = "/scratch/bates.car/datasets/paaws_fl_synced_ankle/"
 
 
 def process_subject(DS: str) -> str:
     """Process a single subject. Returns status message."""
-    accel_path = f"{parent_path}{DS}/accel/{DS}-Free-LeftWrist.csv"
+    accel_path = f"{parent_path}{DS}/accel/{DS}-Free-RightAnkle.csv"
     label_path = f"{parent_path}{DS}/label/{DS}-Free-label.csv"
     out_file = f"{output_path}{DS}_synced.csv"
 

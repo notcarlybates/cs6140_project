@@ -5,8 +5,8 @@ Remove rows with Before_Data_Collection or After_Data_Collection from synced CSV
 import os
 import polars as pl
 
-input_path = "/scratch/bates.car/datasets/paaws_fl_synced/"
-output_path = "/scratch/bates.car/datasets/paaws_fl_trimmed/"
+input_path = "/scratch/bates.car/datasets/paaws_fl_synced_ankle/"
+output_path = "/scratch/bates.car/datasets/paaws_fl_trimmed/ankle"
 
 os.makedirs(output_path, exist_ok=True)
 

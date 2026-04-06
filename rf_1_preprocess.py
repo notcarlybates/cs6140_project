@@ -13,8 +13,8 @@ from scipy import interpolate
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from utils import MAPPING_SCHEMES
 
-INPUT_PATH = "/scratch/bates.car/datasets/paaws_fl_trimmed/"
-OUTPUT_PATH = "/scratch/bates.car/datasets/paaws_fl_preprocessed/"
+INPUT_PATH = "/scratch/bates.car/datasets/paaws_fl_trimmed/ankle"
+OUTPUT_PATH = "/scratch/bates.car/datasets/paaws_fl_preprocessed/ankle"
 TARGET_HZ = 30
 WINDOW_SEC = 10
 WINDOW_SIZE = TARGET_HZ * WINDOW_SEC  # 300 samples per window

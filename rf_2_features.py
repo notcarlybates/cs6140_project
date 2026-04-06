@@ -8,8 +8,8 @@ import numpy as np
 from scipy import stats
 from scipy.fft import fft, fftfreq
 
-INPUT_PATH = "/scratch/bates.car/datasets/paaws_fl_preprocessed/"
-OUTPUT_PATH = "/scratch/bates.car/datasets/paaws_fl_features/"
+INPUT_PATH = "/scratch/bates.car/datasets/paaws_fl_preprocessed/ankle"
+OUTPUT_PATH = "/scratch/bates.car/datasets/paaws_fl_features/ankle"
 TARGET_HZ = 30
 
 
