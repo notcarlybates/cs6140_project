@@ -28,6 +28,7 @@ LOCATIONS=("LeftWrist" "RightAnkle" "RightThigh")
 # Create all required directories before anything runs
 mkdir -p "${SCRIPT_DIR}/logs"
 for LOCATION in "${LOCATIONS[@]}"; do
+    mkdir -p "/scratch/bates.car/datasets/paaws_fl_synced/${LOCATION}"
     mkdir -p "/scratch/bates.car/datasets/paaws_fl_trimmed/${LOCATION}"
     mkdir -p "/scratch/bates.car/datasets/paaws_fl_preprocessed/${LOCATION}"
     mkdir -p "/scratch/bates.car/datasets/paaws_fl_features/${LOCATION}"
@@ -40,23 +41,35 @@ for LOCATION in "${LOCATIONS[@]}"; do
     echo "Processing location: ${LOCATION}"
     echo "=============================="
 
-    # Step 1: Preprocessing
+    # Step 1: Sync accelerometer data with labels
     echo ""
-    echo "--- [${LOCATION}] Step 1: Preprocessing ($(date)) ---"
-    python "${SCRIPT_DIR}/rf_1_preprocess.py" --location "${LOCATION}"
+    echo "--- [${LOCATION}] Step 1: Sync ($(date)) ---"
+    python "${SCRIPT_DIR}/sync_paaws.py" --location "${LOCATION}"
     echo "--- [${LOCATION}] Step 1 complete ($(date)) ---"
 
-    # Step 2: Feature extraction
+    # Step 2: Slice (remove before/after collection rows)
     echo ""
-    echo "--- [${LOCATION}] Step 2: Feature extraction ($(date)) ---"
-    python "${SCRIPT_DIR}/rf_2_features.py" --location "${LOCATION}"
+    echo "--- [${LOCATION}] Step 2: Slice ($(date)) ---"
+    python "${SCRIPT_DIR}/slice_data.py" --location "${LOCATION}"
     echo "--- [${LOCATION}] Step 2 complete ($(date)) ---"
 
-    # Step 3: Training
+    # Step 3: Preprocessing (resample + window)
     echo ""
-    echo "--- [${LOCATION}] Step 3: Training ($(date)) ---"
-    python "${SCRIPT_DIR}/rf_3_train.py" --location "${LOCATION}"
+    echo "--- [${LOCATION}] Step 3: Preprocessing ($(date)) ---"
+    python "${SCRIPT_DIR}/rf_1_preprocess.py" --location "${LOCATION}"
     echo "--- [${LOCATION}] Step 3 complete ($(date)) ---"
+
+    # Step 4: Feature extraction
+    echo ""
+    echo "--- [${LOCATION}] Step 4: Feature extraction ($(date)) ---"
+    python "${SCRIPT_DIR}/rf_2_features.py" --location "${LOCATION}"
+    echo "--- [${LOCATION}] Step 4 complete ($(date)) ---"
+
+    # Step 5: Training
+    echo ""
+    echo "--- [${LOCATION}] Step 5: Training ($(date)) ---"
+    python "${SCRIPT_DIR}/rf_3_train.py" --location "${LOCATION}"
+    echo "--- [${LOCATION}] Step 5 complete ($(date)) ---"
 
 done
 

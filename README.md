@@ -7,7 +7,20 @@ Human Activity Recognition (HAR) using a Random Forest classifier on PAAWS accel
 ## Data Pipeline
 
 ```
-paaws_fl_trimmed/<location>/*.csv
+paaws_fl/PAAWS_FreeLiving/<DS>/accel/<DS>-Free-<location>.csv
+paaws_fl/PAAWS_FreeLiving/<DS>/label/<DS>-Free-label.csv
+        |
+        v
+[sync_paaws.py]       — sync accelerometer data with activity labels (parallel)
+        |
+        v
+paaws_fl_synced/<location>/<DS>_synced.csv
+        |
+        v
+[slice_data.py]       — remove Before/After_Data_Collection rows
+        |
+        v
+paaws_fl_trimmed/<location>/<DS>_synced.csv
         |
         v
 [rf_1_preprocess.py]  — resample 80Hz → 30Hz, window into 10s segments
@@ -29,7 +42,7 @@ paaws_fl_results/<location>/{cv_results.csv, rf_model.joblib, scaler.joblib,
                               label_encoder.joblib, feature_importance.csv}
 ```
 
-Each location is processed fully (all 3 steps) before the next location begins.
+Each location is processed fully (all 5 steps) before the next location begins.
 
 ---
 
@@ -55,7 +68,7 @@ python rf_3_train.py      --location <LOCATION>
 
 ## Script Arguments
 
-All three scripts share the same required argument:
+All five scripts share the same required argument:
 
 | Argument | Type | Required | Choices | Description |
 |---|---|---|---|---|
@@ -64,6 +77,29 @@ All three scripts share the same required argument:
 ---
 
 ## Script Details
+
+### `sync_paaws.py`
+
+Reads raw actigraph CSVs and label CSVs for each subject from the PAAWS FreeLiving dataset, merges them by timestamp using `read_accelerometer_data.py`, and writes one `<DS>_synced.csv` per subject. Subjects are processed in parallel.
+
+| Constant | Value | Description |
+|---|---|---|
+| `PARENT_PATH` | `paaws_fl/PAAWS_FreeLiving/` | Root directory of raw subject data |
+
+Accel file expected at: `<PARENT_PATH>/<DS>/accel/<DS>-Free-<location>.csv`
+Label file expected at: `<PARENT_PATH>/<DS>/label/<DS>-Free-label.csv`
+
+**Output:** `paaws_fl_synced/<location>/<DS>_synced.csv`
+
+---
+
+### `slice_data.py`
+
+Removes rows where `Activity` is `Before_Data_Collection` or `After_Data_Collection`. Replaces `PA_Type_Video_Unavailable/Indecipherable` with `Unknown`.
+
+**Output:** `paaws_fl_trimmed/<location>/<DS>_synced.csv`
+
+---
 
 ### `rf_1_preprocess.py`
 
@@ -147,9 +183,12 @@ Labels are mapped using the `lab_fl_5` scheme from `utils.py`, collapsing raw la
 
 ```
 cs6140_project/
+├── sync_paaws.py
+├── slice_data.py
 ├── rf_1_preprocess.py
 ├── rf_2_features.py
 ├── rf_3_train.py
+├── read_accelerometer_data.py
 ├── run_rf_pipeline.sh
 ├── utils.py
 └── README.md
@@ -159,6 +198,11 @@ Scratch data directories (on cluster):
 
 ```
 /scratch/bates.car/datasets/
+├── paaws_fl/PAAWS_FreeLiving/        ← raw input (read-only)
+├── paaws_fl_synced/
+│   ├── LeftWrist/
+│   ├── RightAnkle/
+│   └── RightThigh/
 ├── paaws_fl_trimmed/
 │   ├── LeftWrist/
 │   ├── RightAnkle/
