@@ -2,12 +2,28 @@
 Remove rows with Before_Data_Collection or After_Data_Collection from synced CSVs.
 """
 
+import argparse
 import os
 import polars as pl
 
-input_path = "/scratch/bates.car/datasets/paaws_fl_synced/"
-output_path = "/scratch/bates.car/datasets/paaws_fl_trimmed/"
+BASE_INPUT_PATH = "/scratch/bates.car/datasets/paaws_fl_synced/"
+BASE_OUTPUT_PATH = "/scratch/bates.car/datasets/paaws_fl_trimmed/"
+LOCATIONS = ["LeftWrist", "RightAnkle", "RightThigh"]
 
+parser = argparse.ArgumentParser(description="Slice synced CSVs for a given sensor location.")
+parser.add_argument("--location", required=True, choices=LOCATIONS,
+                    help="Sensor location to process (LeftWrist, RightAnkle, RightThigh)")
+args = parser.parse_args()
+location = args.location
+
+input_path = os.path.join(BASE_INPUT_PATH, location) + "/"
+output_path = os.path.join(BASE_OUTPUT_PATH, location) + "/"
+
+print(f"Location:    {location}")
+print(f"Input path:  {input_path}")
+print(f"Output path: {output_path}")
+
+os.makedirs(input_path, exist_ok=True)
 os.makedirs(output_path, exist_ok=True)
 
 for file in os.listdir(input_path):
