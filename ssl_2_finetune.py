@@ -197,7 +197,7 @@ def run_fold(fold_num: int,
     def make_loader(wins, shuffle):
         return DataLoader(LabeledWindowDataset(wins, le),
                           batch_size=BATCH_SIZE, shuffle=shuffle,
-                          num_workers=4, pin_memory=True)
+                          num_workers=min(4, os.cpu_count() or 1), pin_memory=True)
 
     train_loader = make_loader(train_wins, shuffle=True)
     val_loader   = make_loader(val_wins,   shuffle=False) if val_wins else []

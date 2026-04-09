@@ -59,8 +59,35 @@ ACTIVITY_MAPPING = MAPPING_SCHEMES["lab_fl_5"]
 # Shared helpers (adapted from rf_1_preprocess.py)
 # ===========================================================================
 
+def _interpolate_nans(arr: np.ndarray) -> np.ndarray:
+    """Fill NaN values in a 1-D array via linear interpolation.
+
+    Leading/trailing NaNs are forward/back-filled with the nearest valid value.
+    If the entire array is NaN it is returned unchanged.
+    """
+    nans = np.isnan(arr)
+    if not nans.any():
+        return arr
+    if nans.all():
+        return arr
+    valid = ~nans
+    arr = arr.copy()
+    arr[nans] = np.interp(
+        np.flatnonzero(nans), np.flatnonzero(valid), arr[valid]
+    )
+    return arr
+
+
 def resample_to_30hz(data: np.ndarray, original_hz: int) -> np.ndarray:
-    """Linearly resample a (3, N) array from original_hz to 30 Hz."""
+    """Linearly resample a (3, N) array from original_hz to 30 Hz.
+
+    NaN values in the input are interpolated over before resampling so they
+    do not propagate.
+    """
+    # Interpolate over NaN gaps per axis
+    for ax in range(data.shape[0]):
+        data[ax] = _interpolate_nans(data[ax])
+
     if original_hz == TARGET_HZ:
         return data
     n_orig = data.shape[1]
@@ -88,12 +115,18 @@ def make_windows(data: np.ndarray, subject_id: str,
     for i in range(n_windows):
         s = i * WINDOW_SIZE
         e = s + WINDOW_SIZE
+        x_seg, y_seg, z_seg = data[0, s:e], data[1, s:e], data[2, s:e]
+
+        # Drop windows that still contain NaN (e.g. entirely-NaN axis)
+        if np.isnan(x_seg).any() or np.isnan(y_seg).any() or np.isnan(z_seg).any():
+            continue
+
         w = {
             "subject_id": subject_id,
             "window_id":  i,
-            "X": data[0, s:e],
-            "Y": data[1, s:e],
-            "Z": data[2, s:e],
+            "X": x_seg,
+            "Y": y_seg,
+            "Z": z_seg,
         }
         if labels is not None:
             seg = labels[s:e]

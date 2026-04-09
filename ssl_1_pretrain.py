@@ -226,7 +226,11 @@ def _build_subject_weights(windows: list) -> dict:
             np.std(np.stack([windows[i]["X"], windows[i]["Y"], windows[i]["Z"]]))
             for i in indices
         ], dtype=float)
-        weights /= weights.sum() + 1e-12
+        # Replace NaN/Inf and set a small floor so static windows can still
+        # be sampled (but with low probability)
+        weights = np.nan_to_num(weights, nan=0.0, posinf=0.0, neginf=0.0)
+        weights = np.maximum(weights, 1e-8)
+        weights /= weights.sum()
         subject_weights[sid] = (np.array(indices), weights)
     return subject_weights
 
@@ -373,9 +377,9 @@ def main():
                                         n_windows=args.n_windows_per_subject)
 
     train_loader = DataLoader(train_dataset, batch_sampler=batch_sampler,
-                              num_workers=4, pin_memory=True)
+                              num_workers=min(4, os.cpu_count() or 1), pin_memory=True)
     test_loader  = DataLoader(test_dataset,  batch_size=512, shuffle=False,
-                              num_workers=4, pin_memory=True)
+                              num_workers=min(4, os.cpu_count() or 1), pin_memory=True)
 
     # ------------------------------------------------------------------
     # Model and optimiser
