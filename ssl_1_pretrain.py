@@ -165,6 +165,9 @@ def apply_time_warp(signal: np.ndarray, n_knots: int = 4,
                                  bounds_error=False, fill_value="extrapolate")
         warped[i] = f(warped_t).astype(np.float32)
 
+    if not np.isfinite(warped).all():
+        return signal, 0  # fall back to untransformed signal
+
     return warped, 1
 
 

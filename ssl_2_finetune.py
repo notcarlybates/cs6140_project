@@ -273,7 +273,7 @@ def main():
     print(f"  {len(windows):,} labeled windows")
 
     print(f"Loading backbone from {pretrain_ckpt} ...")
-    ckpt           = torch.load(pretrain_ckpt, map_location="cpu")
+    ckpt           = torch.load(pretrain_ckpt, map_location="cpu", weights_only=False)
     backbone_state = ckpt["backbone_state_dict"]
 
     # Encode labels
