@@ -84,6 +84,11 @@ for LOCATION in "${LOCATIONS[@]}"; do
 done
 
 echo ""
+echo "--- Step 6: Comparing SSL vs RF results ($(date)) ---"
+python "${SCRIPT_DIR}/ssl_3_compare.py"
+echo "--- Step 6 complete ($(date)) ---"
+
+echo ""
 echo "=============================="
 echo "Pipeline complete: $(date)"
 echo "=============================="

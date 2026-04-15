@@ -36,7 +36,7 @@ import numpy as np
 import polars as pl
 import torch
 import torch.nn as nn
-from sklearn.metrics import cohen_kappa_score, f1_score
+from sklearn.metrics import classification_report, cohen_kappa_score, confusion_matrix, f1_score
 from sklearn.preprocessing import LabelEncoder
 from torch.optim import Adam
 from torch.utils.data import DataLoader, Dataset
@@ -228,8 +228,12 @@ def run_fold(fold_num: int,
 
     print(f"  Fold {fold_num}: macro_F1={macro_f1:.4f}  "
           f"subject_F1={sw_f1:.4f}  kappa={kappa:.4f}")
-    return {"fold": fold_num, "macro_f1": macro_f1,
-            "subject_f1": sw_f1, "kappa": kappa}
+    return (
+        {"fold": fold_num, "macro_f1": macro_f1,
+         "subject_f1": sw_f1, "kappa": kappa},
+        y_true,
+        y_pred,
+    )
 
 
 def _subject_wise_f1(y_true: list, y_pred: list, subj_ids: list) -> float:
@@ -300,6 +304,7 @@ def main():
         splits = list(loso_splits(subjects))
 
     all_results = []
+    all_true, all_pred = [], []
     for fold_num, (tr_s, val_s, te_s) in enumerate(splits, start=1):
         print(f"\n--- Fold {fold_num}/{len(splits)} ---")
         print(f"  Train: {len(tr_s)}, Val: {len(val_s)}, Test: {len(te_s)}")
@@ -308,9 +313,11 @@ def main():
         val_wins = [w for s in val_s for w in subj_wins[s]]
         te_wins  = [w for s in te_s  for w in subj_wins[s]]
 
-        result = run_fold(fold_num, tr_wins, val_wins, te_wins,
-                          le, backbone_state, device)
+        result, fold_true, fold_pred = run_fold(
+            fold_num, tr_wins, val_wins, te_wins, le, backbone_state, device)
         all_results.append(result)
+        all_true.extend(fold_true)
+        all_pred.extend(fold_pred)
 
     # ------------------------------------------------------------------
     # Summary
@@ -328,6 +335,27 @@ def main():
     out_csv = os.path.join(output_path, "cv_results.csv")
     pl.DataFrame(all_results).write_csv(out_csv)
     print(f"\nResults saved to {out_csv}")
+
+    # ------------------------------------------------------------------
+    # Pooled classification report + confusion matrix (across all folds)
+    # ------------------------------------------------------------------
+    report_str = classification_report(
+        all_true, all_pred, target_names=le.classes_, zero_division=0)
+    print("\nPooled classification report (all folds):")
+    print(report_str)
+
+    report_path = os.path.join(output_path, "classification_report.txt")
+    with open(report_path, "w") as f:
+        f.write(report_str)
+    print(f"Classification report saved to {report_path}")
+
+    cm = confusion_matrix(all_true, all_pred)
+    cm_df = pl.DataFrame(
+        {cls: cm[:, i].tolist() for i, cls in enumerate(le.classes_)},
+    ).with_columns(pl.Series("true_label", le.classes_))
+    cm_path = os.path.join(output_path, "confusion_matrix.csv")
+    cm_df.write_csv(cm_path)
+    print(f"Confusion matrix saved to {cm_path}")
 
 
 if __name__ == "__main__":
