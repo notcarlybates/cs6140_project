@@ -51,27 +51,27 @@ for LOCATION in "${LOCATIONS[@]}"; do
 #     python "${SCRIPT_DIR}/slice_data.py" --location "${LOCATION}"
 #     echo "--- [${LOCATION}] Step 2 complete ($(date)) ---"
 
-#     # Step 3: Preprocessing (resample to 30 Hz + 10-second windowing)
-#     # Shared with the RF pipeline — skip if windows.npy already exists
-#     echo ""
-#     echo "--- [${LOCATION}] Step 3: Preprocessing ($(date)) ---"
-#     WINDOWS_FILE="/scratch/bates.car/datasets/paaws_fl_preprocessed/${LOCATION}/windows.npy"
-#     if [ -f "${WINDOWS_FILE}" ]; then
-#         echo "  windows.npy already exists, skipping preprocessing"
-#     else
-#         python "${SCRIPT_DIR}/rf_1_preprocess.py" --location "${LOCATION}"
-#     fi
-#     echo "--- [${LOCATION}] Step 3 complete ($(date)) ---"
+    # Step 3: Preprocessing (resample to 30 Hz + 10-second windowing)
+    # Shared with the RF pipeline — skip if windows.npy already exists
+    # echo ""
+    # echo "--- [${LOCATION}] Step 3: Preprocessing ($(date)) ---"
+    # WINDOWS_FILE="/scratch/bates.car/datasets/paaws_fl_preprocessed/${LOCATION}/windows.npy"
+    # if [ -f "${WINDOWS_FILE}" ]; then
+    #     echo "  windows.npy already exists, skipping preprocessing"
+    # else
+    #     python "${SCRIPT_DIR}/rf_1_preprocess.py" --location "${LOCATION}"
+    # fi
+    # echo "--- [${LOCATION}] Step 3 complete ($(date)) ---"
 
-#     # Step 4: SSL pre-training
-#     echo ""
-#     echo "--- [${LOCATION}] Step 4: SSL pre-training ($(date)) ---"
-#     python "${SCRIPT_DIR}/ssl_1_pretrain.py" \
-#         --location "${LOCATION}" \
-#         --epochs 20 \
-#         --n-subjects-per-batch 4 \
-#         --n-windows-per-subject 1500
-#     echo "--- [${LOCATION}] Step 4 complete ($(date)) ---"
+    # Step 4: SSL pre-training
+    echo ""
+    echo "--- [${LOCATION}] Step 4: SSL pre-training ($(date)) ---"
+    python "${SCRIPT_DIR}/ssl_1_pretrain.py" \
+        --location "${LOCATION}" \
+        --epochs 20 \
+        --n-subjects-per-batch 4 \
+        --n-windows-per-subject 1500
+    echo "--- [${LOCATION}] Step 4 complete ($(date)) ---"
 
     # Step 5: Downstream fine-tuning + evaluation
     echo ""

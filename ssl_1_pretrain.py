@@ -417,7 +417,7 @@ def main():
 
         if te_loss < best_test_loss:
             best_test_loss = te_loss
-            ckpt = os.path.join(output_path, "best_backbone.pt")
+            ckpt = os.path.join(output_path, "final_backbone.pt")
             torch.save({
                 "epoch": epoch,
                 "backbone_state_dict": model.backbone.state_dict(),
