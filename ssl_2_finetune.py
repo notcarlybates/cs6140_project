@@ -349,13 +349,10 @@ def main():
         f.write(report_str)
     print(f"Classification report saved to {report_path}")
 
+    print("\nConfusion Matrix:")
     cm = confusion_matrix(all_true, all_pred)
-    cm_df = pl.DataFrame(
-        {cls: cm[:, i].tolist() for i, cls in enumerate(le.classes_)},
-    ).with_columns(pl.Series("true_label", le.classes_))
-    cm_path = os.path.join(output_path, "confusion_matrix.csv")
-    cm_df.write_csv(cm_path)
-    print(f"Confusion matrix saved to {cm_path}")
+    print(f"Classes: {le.classes_}")
+    print(cm)
 
 
 if __name__ == "__main__":
