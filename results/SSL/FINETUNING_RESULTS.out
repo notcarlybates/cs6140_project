@@ -1,0 +1,53 @@
+==============================
+SSL HAR Fine-tuning Only
+Job ID: 5966240
+Node:   d1009
+Start:  Wed Apr 15 07:23:15 PM EDT 2026
+==============================
+
+==============================
+Processing location: LeftWrist
+==============================
+
+--- [LeftWrist] Step 5: Fine-tuning (Wed Apr 15 07:23:15 PM EDT 2026) ---
+Device: cuda
+Loading windows from /scratch/bates.car/datasets/paaws_ssl_preprocessed/LeftWrist/labeled_windows.npy ...
+  491,916 labeled windows
+Loading backbone from /scratch/bates.car/models/ssl_pretrained/LeftWrist/best_backbone.pt ...
+Classes (5): ['Biking', 'Lying_Down', 'Sitting', 'Standing', 'Walking']
+Subjects: 20
+5-fold subject-wise CV (7:1:2 split)
+
+--- Fold 1/5 ---
+  Train: 14, Val: 2, Test: 4
+  Fold 1: macro_F1=0.4341  subject_F1=0.4296  kappa=0.4537
+
+--- Fold 2/5 ---
+  Train: 14, Val: 2, Test: 4
+  Fold 2: macro_F1=0.4650  subject_F1=0.4518  kappa=0.3801
+
+--- Fold 3/5 ---
+  Train: 14, Val: 2, Test: 4
+  Fold 3: macro_F1=0.4882  subject_F1=0.4808  kappa=0.5668
+
+--- Fold 4/5 ---
+  Train: 14, Val: 2, Test: 4
+  Fold 4: macro_F1=0.4691  subject_F1=0.4563  kappa=0.3863
+
+--- Fold 5/5 ---
+  Train: 14, Val: 2, Test: 4
+  Fold 5: macro_F1=0.4169  subject_F1=0.4302  kappa=0.4575
+
+============================================================
+RESULTS SUMMARY
+============================================================
+Macro F1 (pooled):  0.4547 ± 0.0257
+Subject-wise F1:    0.4497 ± 0.0189
+Cohen's Kappa (κ):  0.4489 ± 0.0673
+
+Results saved to /scratch/bates.car/datasets/paaws_ssl_results/LeftWrist/cv_results.csv
+--- [LeftWrist] Step 5 complete (Wed Apr 15 09:02:54 PM EDT 2026) ---
+
+==============================
+Pipeline complete: Wed Apr 15 09:02:54 PM EDT 2026
+==============================

@@ -12,56 +12,56 @@ set -euo pipefail
 
 SCRIPT_DIR="/home/bates.car/github/cs6140_project"
 
-echo "=============================="
-echo "SSL HAR Pipeline"
-echo "Job ID: ${SLURM_JOB_ID}"
-echo "Node:   $(hostname)"
-echo "Start:  $(date)"
-echo "=============================="
+# echo "=============================="
+# echo "SSL HAR Pipeline"
+# echo "Job ID: ${SLURM_JOB_ID}"
+# echo "Node:   $(hostname)"
+# echo "Start:  $(date)"
+# echo "=============================="
 
 source "${SCRIPT_DIR}/.venv/bin/activate"
 
 LOCATIONS=("LeftWrist" "RightAnkle" "RightThigh")
 
-# Create all required directories before anything runs
-mkdir -p "${SCRIPT_DIR}/logs"
-for LOCATION in "${LOCATIONS[@]}"; do
-    mkdir -p "/scratch/bates.car/datasets/paaws_fl_synced/${LOCATION}"
-    mkdir -p "/scratch/bates.car/datasets/paaws_fl_trimmed/${LOCATION}"
-    mkdir -p "/scratch/bates.car/datasets/paaws_fl_preprocessed/${LOCATION}"
-    mkdir -p "/scratch/bates.car/models/ssl_pretrained/${LOCATION}"
-    mkdir -p "/scratch/bates.car/datasets/paaws_ssl_results/${LOCATION}"
-done
+# # Create all required directories before anything runs
+# mkdir -p "${SCRIPT_DIR}/logs"
+# for LOCATION in "${LOCATIONS[@]}"; do
+#     mkdir -p "/scratch/bates.car/datasets/paaws_fl_synced/${LOCATION}"
+#     mkdir -p "/scratch/bates.car/datasets/paaws_fl_trimmed/${LOCATION}"
+#     mkdir -p "/scratch/bates.car/datasets/paaws_fl_preprocessed/${LOCATION}"
+#     mkdir -p "/scratch/bates.car/models/ssl_pretrained/${LOCATION}"
+#     mkdir -p "/scratch/bates.car/datasets/paaws_ssl_results/${LOCATION}"
+# done
 
 for LOCATION in "${LOCATIONS[@]}"; do
-    echo ""
-    echo "=============================="
-    echo "Processing location: ${LOCATION}"
-    echo "=============================="
+#     echo ""
+#     echo "=============================="
+#     echo "Processing location: ${LOCATION}"
+#     echo "=============================="
 
-    # Step 1: Sync accelerometer data with labels
-    echo ""
-    echo "--- [${LOCATION}] Step 1: Sync ($(date)) ---"
-    python "${SCRIPT_DIR}/sync_paaws.py" --location "${LOCATION}"
-    echo "--- [${LOCATION}] Step 1 complete ($(date)) ---"
+#     # Step 1: Sync accelerometer data with labels
+#     echo ""
+#     echo "--- [${LOCATION}] Step 1: Sync ($(date)) ---"
+#     python "${SCRIPT_DIR}/sync_paaws.py" --location "${LOCATION}"
+#     echo "--- [${LOCATION}] Step 1 complete ($(date)) ---"
 
-    # Step 2: Slice (remove before/after collection rows)
-    echo ""
-    echo "--- [${LOCATION}] Step 2: Slice ($(date)) ---"
-    python "${SCRIPT_DIR}/slice_data.py" --location "${LOCATION}"
-    echo "--- [${LOCATION}] Step 2 complete ($(date)) ---"
+#     # Step 2: Slice (remove before/after collection rows)
+#     echo ""
+#     echo "--- [${LOCATION}] Step 2: Slice ($(date)) ---"
+#     python "${SCRIPT_DIR}/slice_data.py" --location "${LOCATION}"
+#     echo "--- [${LOCATION}] Step 2 complete ($(date)) ---"
 
-    # Step 3: Preprocessing (resample to 30 Hz + 10-second windowing)
-    # Shared with the RF pipeline — skip if windows.npy already exists
-    echo ""
-    echo "--- [${LOCATION}] Step 3: Preprocessing ($(date)) ---"
-    WINDOWS_FILE="/scratch/bates.car/datasets/paaws_fl_preprocessed/${LOCATION}/windows.npy"
-    if [ -f "${WINDOWS_FILE}" ]; then
-        echo "  windows.npy already exists, skipping preprocessing"
-    else
-        python "${SCRIPT_DIR}/rf_1_preprocess.py" --location "${LOCATION}"
-    fi
-    echo "--- [${LOCATION}] Step 3 complete ($(date)) ---"
+#     # Step 3: Preprocessing (resample to 30 Hz + 10-second windowing)
+#     # Shared with the RF pipeline — skip if windows.npy already exists
+#     echo ""
+#     echo "--- [${LOCATION}] Step 3: Preprocessing ($(date)) ---"
+#     WINDOWS_FILE="/scratch/bates.car/datasets/paaws_fl_preprocessed/${LOCATION}/windows.npy"
+#     if [ -f "${WINDOWS_FILE}" ]; then
+#         echo "  windows.npy already exists, skipping preprocessing"
+#     else
+#         python "${SCRIPT_DIR}/rf_1_preprocess.py" --location "${LOCATION}"
+#     fi
+#     echo "--- [${LOCATION}] Step 3 complete ($(date)) ---"
 
     # Step 4: SSL pre-training
     echo ""
