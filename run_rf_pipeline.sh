@@ -21,7 +21,7 @@ echo "Start:  $(date)"
 echo "=============================="
 
 # Activate virtual environment
-source "${SCRIPT_DIR}/.venv/bin/activate"
+SCRIPT_DIR="/home/bates.car/github/cs6140_project"
 
 LOCATIONS=("LeftWrist" "RightAnkle" "RightThigh")
 

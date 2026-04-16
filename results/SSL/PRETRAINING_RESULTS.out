@@ -1,0 +1,266 @@
+==============================
+SSL HAR Pipeline
+Job ID: 5821496
+Node:   d1010
+Start:  Thu Apr  9 03:56:55 PM EDT 2026
+==============================
+
+==============================
+Processing location: LeftWrist
+==============================
+
+--- [LeftWrist] Step 1: Sync (Thu Apr  9 03:56:55 PM EDT 2026) ---
+Location:    LeftWrist
+Output path: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/
+Found 20 subjects
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_10/accel/DS_10-Free-LeftWrist.csv
+  Loaded 53,055,103 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_10/label/DS_10-Free-label.csv
+  Loaded 2416 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_10_synced.csv
+  Done. 53,055,103 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_138/accel/DS_138-Free-LeftWrist.csv
+  Loaded 46,958,238 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_138/label/DS_138-Free-label.csv
+  Loaded 1639 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_138_synced.csv
+  Done. 46,958,238 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_139/accel/DS_139-Free-LeftWrist.csv
+  Loaded 45,641,587 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_139/label/DS_139-Free-label.csv
+  Loaded 2620 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_139_synced.csv
+  Done. 45,641,587 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_140/accel/DS_140-Free-LeftWrist.csv
+  Loaded 49,724,317 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_140/label/DS_140-Free-label.csv
+  Loaded 1286 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_140_synced.csv
+  Done. 49,724,317 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_235/accel/DS_235-Free-LeftWrist.csv
+  Loaded 49,389,280 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_235/label/DS_235-Free-label.csv
+  Loaded 2238 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_235_synced.csv
+  Done. 49,389,280 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_239/accel/DS_239-Free-LeftWrist.csv
+  Loaded 35,620,804 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_239/label/DS_239-Free-label.csv
+  Loaded 1909 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_239_synced.csv
+  Done. 35,620,804 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_240/accel/DS_240-Free-LeftWrist.csv
+  Loaded 49,179,760 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_240/label/DS_240-Free-label.csv
+  Loaded 1876 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_240_synced.csv
+  Done. 49,179,760 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_246/accel/DS_246-Free-LeftWrist.csv
+  Loaded 49,000,400 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_246/label/DS_246-Free-label.csv
+  Loaded 1782 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_246_synced.csv
+  Done. 49,000,400 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_36/accel/DS_36-Free-LeftWrist.csv
+  Loaded 48,163,348 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_36/label/DS_36-Free-label.csv
+  Loaded 3043 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_36_synced.csv
+  Done. 48,163,348 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_37/accel/DS_37-Free-LeftWrist.csv
+  Loaded 48,103,575 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_37/label/DS_37-Free-label.csv
+  Loaded 3212 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_37_synced.csv
+  Done. 48,103,575 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_38/accel/DS_38-Free-LeftWrist.csv
+  Loaded 48,365,994 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_38/label/DS_38-Free-label.csv
+  Loaded 3035 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_38_synced.csv
+  Done. 48,365,994 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_39/accel/DS_39-Free-LeftWrist.csv
+  Loaded 47,977,436 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_39/label/DS_39-Free-label.csv
+  Loaded 4083 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_39_synced.csv
+  Done. 47,977,436 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_42/accel/DS_42-Free-LeftWrist.csv
+  Loaded 48,186,697 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_42/label/DS_42-Free-label.csv
+  Loaded 3143 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_42_synced.csv
+  Done. 48,186,697 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_44/accel/DS_44-Free-LeftWrist.csv
+  Loaded 48,199,884 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_44/label/DS_44-Free-label.csv
+  Loaded 2033 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_44_synced.csv
+  Done. 48,199,884 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_48/accel/DS_48-Free-LeftWrist.csv
+  Loaded 48,426,532 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_48/label/DS_48-Free-label.csv
+  Loaded 2616 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_48_synced.csv
+  Done. 48,426,532 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_49/accel/DS_49-Free-LeftWrist.csv
+  Loaded 48,141,053 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_49/label/DS_49-Free-label.csv
+  Loaded 1635 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_49_synced.csv
+  Done. 48,141,053 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_51/accel/DS_51-Free-LeftWrist.csv
+  Loaded 48,336,922 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_51/label/DS_51-Free-label.csv
+  Loaded 2050 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_51_synced.csv
+  Done. 48,336,922 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_58/accel/DS_58-Free-LeftWrist.csv
+  Loaded 48,063,026 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_58/label/DS_58-Free-label.csv
+  Loaded 1741 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_58_synced.csv
+  Done. 48,063,026 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_59/accel/DS_59-Free-LeftWrist.csv
+  Loaded 47,630,720 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_59/label/DS_59-Free-label.csv
+  Loaded 2479 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_59_synced.csv
+  Done. 47,630,720 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_87/accel/DS_87-Free-LeftWrist.csv
+  Loaded 49,280,634 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_87/label/DS_87-Free-label.csv
+  Loaded 2462 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_87_synced.csv
+  Done. 49,280,634 rows saved.
+
+--- Summary ---
+[OK] DS_10
+[OK] DS_138
+[OK] DS_139
+[OK] DS_140
+[OK] DS_235
+[OK] DS_239
+[OK] DS_240
+[OK] DS_246
+[OK] DS_36
+[OK] DS_37
+[OK] DS_38
+[OK] DS_39
+[OK] DS_42
+[OK] DS_44
+[OK] DS_48
+[OK] DS_49
+[OK] DS_51
+[OK] DS_58
+[OK] DS_59
+[OK] DS_87
+--- [LeftWrist] Step 1 complete (Thu Apr  9 04:09:43 PM EDT 2026) ---
+
+--- [LeftWrist] Step 2: Slice (Thu Apr  9 04:09:43 PM EDT 2026) ---
+Location:    LeftWrist
+Input path:  /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/
+Output path: /scratch/bates.car/datasets/paaws_fl_trimmed/LeftWrist/
+Processing DS_10_synced.csv...
+  53,055,103 -> 35,444,303 rows (removed 17,610,800)
+Processing DS_138_synced.csv...
+  46,958,238 -> 28,225,085 rows (removed 18,733,153)
+Processing DS_139_synced.csv...
+  45,641,587 -> 26,261,159 rows (removed 19,380,428)
+Processing DS_140_synced.csv...
+  49,724,317 -> 23,570,042 rows (removed 26,154,275)
+Processing DS_235_synced.csv...
+  49,389,280 -> 24,515,038 rows (removed 24,874,242)
+Processing DS_239_synced.csv...
+  35,620,804 -> 16,809,991 rows (removed 18,810,813)
+Processing DS_240_synced.csv...
+  49,179,760 -> 25,752,587 rows (removed 23,427,173)
+Processing DS_246_synced.csv...
+  49,000,400 -> 28,442,150 rows (removed 20,558,250)
+Processing DS_36_synced.csv...
+  48,163,348 -> 28,542,590 rows (removed 19,620,758)
+Processing DS_37_synced.csv...
+  48,103,575 -> 29,046,083 rows (removed 19,057,492)
+Processing DS_38_synced.csv...
+  48,365,994 -> 29,583,246 rows (removed 18,782,748)
+Processing DS_39_synced.csv...
+  47,977,436 -> 27,580,465 rows (removed 20,396,971)
+Processing DS_42_synced.csv...
+  48,186,697 -> 27,339,593 rows (removed 20,847,104)
+Processing DS_44_synced.csv...
+  48,199,884 -> 26,163,361 rows (removed 22,036,523)
+Processing DS_48_synced.csv...
+  48,426,532 -> 27,102,282 rows (removed 21,324,250)
+Processing DS_49_synced.csv...
+  48,141,053 -> 30,323,048 rows (removed 17,818,005)
+Processing DS_51_synced.csv...
+  48,336,922 -> 20,951,406 rows (removed 27,385,516)
+Processing DS_58_synced.csv...
+  48,063,026 -> 27,897,910 rows (removed 20,165,116)
+Processing DS_59_synced.csv...
+  47,630,720 -> 28,206,656 rows (removed 19,424,064)
+Processing DS_87_synced.csv...
+  49,280,634 -> 27,649,330 rows (removed 21,631,304)
+Done.
+--- [LeftWrist] Step 2 complete (Thu Apr  9 04:18:42 PM EDT 2026) ---
+
+--- [LeftWrist] Step 3: Preprocessing (Thu Apr  9 04:18:42 PM EDT 2026) ---
+  windows.npy already exists, skipping preprocessing
+--- [LeftWrist] Step 3 complete (Thu Apr  9 04:18:42 PM EDT 2026) ---
+
+--- [LeftWrist] Step 4: SSL pre-training (Thu Apr  9 04:18:42 PM EDT 2026) ---
+Device: cuda
+Loading windows from /scratch/bates.car/datasets/paaws_ssl_preprocessed/LeftWrist/unlabeled_windows.npy ...
+  12,485,276 windows loaded
+  Train: 163 subjects, 10,015,539 windows
+  Test:  41 subjects, 2,469,737  windows
+Model parameters: 4,374,598
+Effective LR: 0.02344  (base 0.001 × 6000/256)
+Epoch   1/20  train=0.8207  test=nan  aot=0.500  perm=0.500  tw=0.502
+Epoch   2/20  train=0.5961  test=nan  aot=0.500  perm=0.546  tw=0.809
+Epoch   3/20  train=0.5854  test=nan  aot=0.500  perm=0.543  tw=0.765
+Epoch   4/20  train=0.5783  test=nan  aot=0.499  perm=0.560  tw=0.811
+Epoch   5/20  train=0.5767  test=nan  aot=0.500  perm=0.558  tw=0.754
+Epoch   6/20  train=0.5577  test=nan  aot=0.501  perm=0.586  tw=0.847
+Epoch   7/20  train=0.5494  test=nan  aot=0.500  perm=0.578  tw=0.712
+Epoch   8/20  train=0.5451  test=nan  aot=0.500  perm=0.588  tw=0.854
+Epoch   9/20  train=0.5416  test=nan  aot=0.500  perm=0.592  tw=0.874
+Epoch  10/20  train=0.5406  test=nan  aot=0.501  perm=0.593  tw=0.877
+Epoch  11/20  train=0.5429  test=nan  aot=0.500  perm=0.588  tw=0.868
+Epoch  12/20  train=0.5329  test=nan  aot=0.500  perm=0.585  tw=0.824
+Epoch  13/20  train=0.5314  test=nan  aot=0.501  perm=0.594  tw=0.883
+Epoch  14/20  train=0.5355  test=nan  aot=0.500  perm=0.593  tw=0.799
+Epoch  15/20  train=0.5274  test=nan  aot=0.502  perm=0.568  tw=0.811
+Epoch  16/20  train=0.5272  test=nan  aot=0.500  perm=0.594  tw=0.854
+Epoch  17/20  train=0.5218  test=nan  aot=0.504  perm=0.612  tw=0.863
+Epoch  18/20  train=0.5084  test=nan  aot=0.500  perm=0.653  tw=0.800
+Epoch  19/20  train=0.4888  test=nan  aot=0.501  perm=0.661  tw=0.780
+Epoch  20/20  train=0.4763  test=nan  aot=0.503  perm=0.691  tw=0.795
+Final checkpoint saved to /scratch/bates.car/models/ssl_pretrained/LeftWrist/final_backbone.pt
+--- [LeftWrist] Step 4 complete (Thu Apr  9 11:46:09 PM EDT 2026) ---
+
+--- [LeftWrist] Step 5: Fine-tuning (Thu Apr  9 11:46:09 PM EDT 2026) ---
+Device: cuda
+Loading windows from /scratch/bates.car/datasets/paaws_ssl_preprocessed/LeftWrist/labeled_windows.npy ...
+  491,916 labeled windows
+Loading backbone from /scratch/bates.car/models/ssl_pretrained/LeftWrist/best_backbone.pt ...
