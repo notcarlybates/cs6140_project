@@ -356,6 +356,26 @@ def main():
     windows = np.load(input_file, allow_pickle=True).tolist()
     print(f"  {len(windows):,} windows loaded")
 
+    # Drop windows where any axis is entirely NaN; interpolate isolated NaNs
+    def _clean_window(w: dict) -> dict | None:
+        for axis in ("X", "Y", "Z"):
+            arr = w[axis].astype(np.float32)
+            nan_mask = np.isnan(arr)
+            if nan_mask.all():
+                return None          # whole axis missing — discard window
+            if nan_mask.any():
+                idx = np.arange(len(arr))
+                arr[nan_mask] = np.interp(idx[nan_mask], idx[~nan_mask], arr[~nan_mask])
+            w[axis] = arr
+        return w
+
+    n_before = len(windows)
+    windows = [w for w in (_clean_window(w) for w in windows) if w is not None]
+    n_dropped = n_before - len(windows)
+    if n_dropped:
+        print(f"  Dropped {n_dropped:,} windows with all-NaN axes; "
+              f"{len(windows):,} remaining")
+
     # 8:2 subject-wise split
     subjects = sorted({w["subject_id"] for w in windows})
     rng = np.random.default_rng(42)
@@ -415,9 +435,9 @@ def main():
               f"aot={te_acc['aot']:.3f}  perm={te_acc['perm']:.3f}  "
               f"tw={te_acc['tw']:.3f}")
 
-        if te_loss < best_test_loss:
+        if np.isfinite(te_loss) and te_loss < best_test_loss:
             best_test_loss = te_loss
-            ckpt = os.path.join(output_path, "final_backbone.pt")
+            ckpt = os.path.join(output_path, "best_backbone.pt")
             torch.save({
                 "epoch": epoch,
                 "backbone_state_dict": model.backbone.state_dict(),
