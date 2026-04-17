@@ -18,16 +18,12 @@ try:
     from tensorflow import keras
     from tensorflow.keras import layers
 
-    # GPU optimization for RTX 3070
-    # If using WSL2: pip install tensorflow[and-cuda]
-    # If using DirectML: pip install tensorflow-directml
+
     gpus = tf.config.list_physical_devices('GPU')
     if gpus:
         print(f"GPU detected: {gpus}")
-        # Enable memory growth to avoid OOM
         for gpu in gpus:
             tf.config.experimental.set_memory_growth(gpu, True)
-        # Use mixed precision only when GPU is available and properly configured
         try:
             tf.keras.mixed_precision.set_global_policy('mixed_float16')
             print('Mixed precision enabled.')
@@ -41,7 +37,6 @@ except ImportError:
     print("ERROR: TensorFlow not installed. Install with: pip install tensorflow")
     exit(1)
 
-# Change to project root for consistent paths
 project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(project_root)
 
@@ -50,8 +45,7 @@ OUTPUT_PATH = "sams_experiments/results_lstm_10s/"
 
 N_FOLDS = 5
 RANDOM_STATE = 42
-TARGET_FOLD = 1  # Only run Fold 2 (0-indexed, so fold=1 is the 2nd fold)
-
+TARGET_FOLD = 1  
 
 def load_windows():
     """Load raw window sequences for 10-second windows."""
@@ -59,7 +53,6 @@ def load_windows():
     windows = np.load("PAAWS_FreeLiving_preprocessed/windows.npy", allow_pickle=True)
     print(f"Loaded {len(windows)} windows")
 
-    # Extract sequences and labels
     X_list = []
     y_list = []
     subject_ids = []
@@ -69,7 +62,6 @@ def load_windows():
         y = window["Y"].astype(np.float32)
         z = window["Z"].astype(np.float32)
 
-        # Stack into (300, 3) array: 300 timesteps, 3 axes
         sequence = np.stack([x, y, z], axis=1)
         X_list.append(sequence)
         y_list.append(window["label"])
@@ -119,7 +111,6 @@ def train_and_evaluate(X, y, subject_ids):
     print(f"Classes: {le.classes_}")
     print(f"Input shape: {X.shape}")
 
-    # Get unique subjects
     unique_subjects = sorted(set(subject_ids))
     print(f"Total subjects: {len(unique_subjects)}")
 
@@ -128,7 +119,6 @@ def train_and_evaluate(X, y, subject_ids):
     all_y_pred = []
 
     for fold in range(N_FOLDS):
-        # Skip all folds except TARGET_FOLD
         if fold != TARGET_FOLD:
             continue
 
@@ -138,7 +128,6 @@ def train_and_evaluate(X, y, subject_ids):
 
         train_subjects, val_subjects, test_subjects = subject_wise_split(unique_subjects, fold)
 
-        # Split data by subject
         train_mask = np.isin(subject_ids, train_subjects)
         val_mask = np.isin(subject_ids, val_subjects)
         test_mask = np.isin(subject_ids, test_subjects)
@@ -149,13 +138,11 @@ def train_and_evaluate(X, y, subject_ids):
 
         print(f"Train: {X_train.shape[0]} | Val: {X_val.shape[0]} | Test: {X_test.shape[0]}")
 
-        # Normalize
         scaler = StandardScaler()
         X_train_norm = scaler.fit_transform(X_train.reshape(-1, 3)).reshape(X_train.shape)
         X_val_norm = scaler.transform(X_val.reshape(-1, 3)).reshape(X_val.shape)
         X_test_norm = scaler.transform(X_test.reshape(-1, 3)).reshape(X_test.shape)
 
-        # Build and train
         model = build_lstm_model((X_train.shape[1], X_train.shape[2]), num_classes)
         model.compile(
             optimizer=keras.optimizers.Adam(learning_rate=0.001),
@@ -164,7 +151,6 @@ def train_and_evaluate(X, y, subject_ids):
         )
 
         print("\nTraining...")
-        # Early stopping to prevent overfitting
         early_stopping = keras.callbacks.EarlyStopping(
             monitor='val_loss',
             patience=5,
@@ -175,8 +161,8 @@ def train_and_evaluate(X, y, subject_ids):
         history = model.fit(
             X_train_norm, y_train,
             validation_data=(X_val_norm, y_val),
-            epochs=20,  # More epochs for single fold training
-            batch_size=128,  # Reduced to avoid OOM on memory-constrained systems
+            epochs=20, 
+            batch_size=128, 
             callbacks=[early_stopping],
             verbose=1
         )
@@ -204,7 +190,6 @@ def train_and_evaluate(X, y, subject_ids):
         all_y_true.extend(y_test)
         all_y_pred.extend(y_pred_labels)
 
-    # Results summary
     print(f"\n{'='*60}")
     print(f"RESULTS - Fold {TARGET_FOLD + 1}")
     print(f"{'='*60}")
@@ -217,13 +202,11 @@ def train_and_evaluate(X, y, subject_ids):
         print(f"Test Accuracy: {overall_acc:.4f}")
         print(f"Test F1-Score: {overall_f1:.4f}")
 
-        # Save model
         os.makedirs(OUTPUT_PATH, exist_ok=True)
         model_path = os.path.join(OUTPUT_PATH, f"lstm_fold{result['fold']}.h5")
         result['model'].save(model_path)
         print(f"\nModel saved to: {model_path}")
 
-        # Save results summary
         results_text = f"""LSTM Model Results (10-second windows, Fold {TARGET_FOLD + 1})
 ========================================
 Test Accuracy: {overall_acc:.4f}

@@ -1,59 +1,61 @@
 """
-Random Forest model training for HAR.
-5-fold subject-wise cross-validation with 7:1:2 train/val/test split.
+Cross-Validation for Final Model with v1 Features and Best Hyperparameters
 """
 
-import argparse
 import os
 import numpy as np
 import polars as pl
-from sklearn.ensemble import RandomForestClassifier
+import xgboost as xgb
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.metrics import classification_report, f1_score, confusion_matrix
+from sklearn.utils.class_weight import compute_sample_weight
 import joblib
 import warnings
 warnings.filterwarnings('ignore')
 
-BASE_INPUT_PATH = "/scratch/bates.car/datasets/paaws_fl_features/"
-BASE_OUTPUT_PATH = "/scratch/bates.car/datasets/paaws_fl_results/"
-LOCATIONS = ["LeftWrist", "RightAnkle", "RightThigh"]
+import matplotlib.pyplot as plt
+import seaborn as sns
 
-N_SUBJECTS = 20
+INPUT_PATH = "PAAWS_FreeLiving_features/"
+OUTPUT_PATH = "PAAWS_RF/XGBoost_model/"
+
 N_FOLDS = 5
-RANDOM_STATE = 42
+RANDOM_STATE = 67
+
+BEST_HYPERPARAMS = {
+    "max_depth": 7,
+    "learning_rate": 0.010078,
+    "n_estimators": 500,
+    "subsample": 0.624425,
+    "colsample_bytree": 0.710855,
+    "min_child_weight": 1,
+}
+
+USE_ALL_V1_FEATURES = True
 
 
-def load_data(input_path: str):
+def load_data():
     """Load features and prepare for training."""
     print("Loading features...")
-    df = pl.read_csv(f"{input_path}features.csv")
+    df = pl.read_csv(f"{INPUT_PATH}features.csv")
 
-    # Get feature columns (exclude metadata)
     meta_cols = ["subject_id", "window_id", "label"]
-    feature_cols = [c for c in df.columns if c not in meta_cols]
+    all_feature_cols = [c for c in df.columns if c not in meta_cols]
 
-    print(f"Loaded {len(df)} samples, {len(feature_cols)} features")
+    print(f"Loaded {len(df)} samples")
     print(f"Subjects: {df['subject_id'].n_unique()}")
-    print(f"Labels: {df['label'].unique().to_list()}")
 
-    return df, feature_cols
+    return df, all_feature_cols
 
 
 def subject_wise_split(subjects: list, fold: int, n_folds: int = N_FOLDS):
-    """
-    Split subjects into train/val/test sets for a given fold.
-    Ratio: 7:1:2 (train:val:test)
-    """
+    """Split subjects into train/val/test sets for a given fold."""
     n_subjects = len(subjects)
     fold_size = n_subjects // n_folds
-
-    # Rotate subjects for this fold
     rotated = subjects[fold * fold_size:] + subjects[:fold * fold_size]
 
-    # Split: 70% train, 10% val, 20% test
     n_test = max(1, int(n_subjects * 0.2))
     n_val = max(1, int(n_subjects * 0.1))
-    n_train = n_subjects - n_test - n_val
 
     test_subjects = rotated[:n_test]
     val_subjects = rotated[n_test:n_test + n_val]
@@ -62,55 +64,45 @@ def subject_wise_split(subjects: list, fold: int, n_folds: int = N_FOLDS):
     return train_subjects, val_subjects, test_subjects
 
 
-def held_one_out_split(subjects: list, fold: int):
-    """Leave-one-subject-out for small datasets."""
-    test_subjects = [subjects[fold]]
-    train_subjects = [s for i, s in enumerate(subjects) if i != fold]
-    val_subjects = []  # No validation set for LOSO
-    return train_subjects, val_subjects, test_subjects
+def main():
+    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    os.chdir(project_root)
+    
+    os.makedirs(OUTPUT_PATH, exist_ok=True)
 
+    df, all_feature_cols = load_data()
 
-def train_and_evaluate(df: pl.DataFrame, feature_cols: list):
-    """Run cross-validation and return results."""
+    feature_cols = all_feature_cols
+
+    print(f"\nUsing all {len(feature_cols)} v1 features: {feature_cols}")
 
     subjects = sorted(df["subject_id"].unique().to_list())
     n_subjects = len(subjects)
 
-    print(f"\n{'='*60}")
-    print(f"Starting cross-validation with {n_subjects} subjects")
-
-    # Choose CV strategy based on dataset size
-    if n_subjects >= 10:
-        print(f"Using 5-fold subject-wise CV (7:1:2 split)")
-        n_folds = N_FOLDS
-        split_fn = lambda s, f: subject_wise_split(s, f, N_FOLDS)
-    else:
-        print(f"Using leave-one-subject-out CV")
-        n_folds = n_subjects
-        split_fn = held_one_out_split
-
-    # Encode labels
     le = LabelEncoder()
     all_labels = df["label"].to_numpy()
     le.fit(all_labels)
+    n_classes = len(le.classes_)
+
+    print(f"\n{'='*60}")
+    print(f"Starting CV with {n_subjects} subjects, {N_FOLDS} folds")
+    print(f"Hyperparameters: max_depth={BEST_HYPERPARAMS['max_depth']}, "
+          f"learning_rate={BEST_HYPERPARAMS['learning_rate']:.6f}, "
+          f"n_estimators={BEST_HYPERPARAMS['n_estimators']}")
+    print(f"{'='*60}\n")
 
     all_preds = []
     all_true = []
-    all_test_subjects = []
     fold_results = []
 
-    for fold in range(n_folds):
-        print(f"\n--- Fold {fold + 1}/{n_folds} ---")
+    for fold in range(N_FOLDS):
+        print(f"--- Fold {fold + 1}/{N_FOLDS} ---")
 
-        train_subj, val_subj, test_subj = split_fn(subjects, fold)
-        print(f"Train: {len(train_subj)} subjects, Val: {len(val_subj)}, Test: {len(test_subj)}")
+        train_subj, val_subj, test_subj = subject_wise_split(subjects, fold)
+        print(f"Train: {len(train_subj)}, Val: {len(val_subj)}, Test: {len(test_subj)}")
 
-        # Split data
-        train_mask = df["subject_id"].is_in(train_subj)
-        test_mask = df["subject_id"].is_in(test_subj)
-
-        train_df = df.filter(train_mask)
-        test_df = df.filter(test_mask)
+        train_df = df.filter(pl.col("subject_id").is_in(train_subj))
+        test_df = df.filter(pl.col("subject_id").is_in(test_subj))
 
         X_train = train_df.select(feature_cols).to_numpy()
         y_train = le.transform(train_df["label"].to_numpy())
@@ -119,33 +111,39 @@ def train_and_evaluate(df: pl.DataFrame, feature_cols: list):
 
         print(f"Train samples: {len(X_train)}, Test samples: {len(X_test)}")
 
-        # Z-score normalization
         scaler = StandardScaler()
         X_train = scaler.fit_transform(X_train)
         X_test = scaler.transform(X_test)
-
-        # Handle NaN/Inf from correlations
         X_train = np.nan_to_num(X_train, nan=0, posinf=0, neginf=0)
         X_test = np.nan_to_num(X_test, nan=0, posinf=0, neginf=0)
 
-        # Train Random Forest
-        print("Training Random Forest...")
-        rf = RandomForestClassifier(
-            n_estimators=100,
-            max_depth=None,
-            min_samples_split=2,
-            min_samples_leaf=1,
+        # Class weights
+        raw_weights = compute_sample_weight(class_weight="balanced", y=y_train)
+        biking_idx = le.transform(["Biking"])[0]
+        sample_weights = np.where(y_train == biking_idx, raw_weights, np.sqrt(raw_weights))
+        sample_weights /= sample_weights.mean()
+
+        print("Training XGBoost...")
+        xgb_model = xgb.XGBClassifier(
+            max_depth=BEST_HYPERPARAMS["max_depth"],
+            learning_rate=BEST_HYPERPARAMS["learning_rate"],
+            n_estimators=BEST_HYPERPARAMS["n_estimators"],
+            subsample=BEST_HYPERPARAMS["subsample"],
+            colsample_bytree=BEST_HYPERPARAMS["colsample_bytree"],
+            min_child_weight=BEST_HYPERPARAMS["min_child_weight"],
+            objective="multi:softmax",
+            num_class=n_classes,
+            eval_metric="mlogloss",
             n_jobs=-1,
-            random_state=RANDOM_STATE
+            random_state=RANDOM_STATE,
+            verbosity=0,
         )
-        rf.fit(X_train, y_train)
+        xgb_model.fit(X_train, y_train, sample_weight=sample_weights)
 
-        # Predict
-        y_pred = rf.predict(X_test)
+        y_pred = xgb_model.predict(X_test)
 
-        # Metrics
         f1 = f1_score(y_test, y_pred, average='macro')
-        print(f"Fold {fold + 1} Macro F1: {f1:.4f}")
+        print(f"Fold {fold + 1} Macro F1: {f1:.4f}\n")
 
         fold_results.append({
             "fold": fold + 1,
@@ -153,20 +151,18 @@ def train_and_evaluate(df: pl.DataFrame, feature_cols: list):
             "test_subjects": test_subj,
             "f1_macro": f1,
             "n_train": len(X_train),
-            "n_test": len(X_test)
+            "n_test": len(X_test),
         })
 
         all_preds.extend(y_pred)
         all_true.extend(y_test)
-        all_test_subjects.extend(test_df["subject_id"].to_list())
 
-    # Overall metrics
-    print(f"\n{'='*60}")
-    print("OVERALL RESULTS")
     print(f"{'='*60}")
+    print("CROSS-VALIDATION RESULTS")
+    print(f"{'='*60}\n")
 
     overall_f1 = f1_score(all_true, all_preds, average='macro')
-    print(f"\nMacro F1 (all folds): {overall_f1:.4f}")
+    print(f"Macro F1 (all folds): {overall_f1:.4f}")
 
     fold_f1s = [r["f1_macro"] for r in fold_results]
     print(f"Mean Fold F1: {np.mean(fold_f1s):.4f} ± {np.std(fold_f1s):.4f}")
@@ -176,76 +172,41 @@ def train_and_evaluate(df: pl.DataFrame, feature_cols: list):
 
     print("\nConfusion Matrix:")
     cm = confusion_matrix(all_true, all_preds)
-    print(f"Classes: {le.classes_}")
     print(cm)
 
-    return fold_results, le.classes_, overall_f1
+    plt.figure(figsize=(10, 8))
+    sns.heatmap(cm, annot=True, fmt='d', cmap='Blues',
+                xticklabels=le.classes_, yticklabels=le.classes_,
+                cbar_kws={'label': 'Number of samples'})
+    plt.title(f'Confusion Matrix - v1 Features + Best Hyperparameters\nMacro F1: {overall_f1:.4f}')
+    plt.xlabel('Predicted Label')
+    plt.ylabel('True Label')
+    plt.tight_layout()
 
+    heatmap_path = f"{OUTPUT_PATH}confusion_matrix_heatmap.png"
+    plt.savefig(heatmap_path, dpi=300, bbox_inches='tight')
+    plt.close()
+    print(f"\nConfusion matrix heatmap saved to: {heatmap_path}")
 
-def main():
-    parser = argparse.ArgumentParser(description="Train Random Forest for a given sensor location.")
-    parser.add_argument("--location", required=True, choices=LOCATIONS,
-                        help="Sensor location to process (LeftWrist, RightAnkle, RightThigh)")
-    args = parser.parse_args()
-    location = args.location
-
-    input_path = os.path.join(BASE_INPUT_PATH, location) + "/"
-    output_path = os.path.join(BASE_OUTPUT_PATH, location) + "/"
-
-    print(f"Location:    {location}")
-    print(f"Input path:  {input_path}")
-    print(f"Output path: {output_path}")
-
-    os.makedirs(input_path, exist_ok=True)
-    os.makedirs(output_path, exist_ok=True)
-
-    df, feature_cols = load_data(input_path)
-
-    results, classes, overall_f1 = train_and_evaluate(df, feature_cols)
-
-    # Save results (convert subject lists to strings for CSV serialization)
     results_serializable = [
         {**r,
          "train_subjects": ";".join(str(s) for s in r["train_subjects"]),
          "test_subjects": ";".join(str(s) for s in r["test_subjects"])}
-        for r in results
+        for r in fold_results
     ]
     results_df = pl.DataFrame(results_serializable)
-    results_df.write_csv(f"{output_path}cv_results.csv")
-    print(f"\nResults saved to {output_path}cv_results.csv")
+    results_df.write_csv(f"{OUTPUT_PATH}cv_results.csv")
+    print(f"\nResults saved to {OUTPUT_PATH}cv_results.csv")
 
-    # Train final model on all data
-    print("\nTraining final model on all data...")
-    le = LabelEncoder()
-    X = df.select(feature_cols).to_numpy()
-    y = le.fit_transform(df["label"].to_numpy())
-
-    scaler = StandardScaler()
-    X = scaler.fit_transform(X)
-    X = np.nan_to_num(X, nan=0, posinf=0, neginf=0)
-
-    final_rf = RandomForestClassifier(
-        n_estimators=100,
-        n_jobs=-1,
-        random_state=RANDOM_STATE
-    )
-    final_rf.fit(X, y)
-
-    # Save model and scaler
-    joblib.dump(final_rf, f"{output_path}rf_model.joblib")
-    joblib.dump(scaler, f"{output_path}scaler.joblib")
-    joblib.dump(le, f"{output_path}label_encoder.joblib")
-    print(f"Model saved to {output_path}rf_model.joblib")
-
-    # Feature importance
-    importance = pl.DataFrame({
-        "feature": feature_cols,
-        "importance": final_rf.feature_importances_
-    }).sort("importance", descending=True)
-
-    print("\nTop 10 Feature Importances:")
-    print(importance.head(10))
-    importance.write_csv(f"{output_path}feature_importance.csv")
+    print(f"\n{'='*60}")
+    print("SUMMARY - v1 Features + Best Hyperparameters")
+    print(f"{'='*60}")
+    print(f"Model: XGBoost with all v1 features + best hyperparameters")
+    print(f"Features: {len(feature_cols)} (all v1 features)")
+    print(f"CV Strategy: 5-fold subject-wise split (7:1:2 train/val/test)")
+    print(f"CV Macro F1: {overall_f1:.4f}")
+  
+    print(f"{'='*60}\n")
 
 
 if __name__ == "__main__":
