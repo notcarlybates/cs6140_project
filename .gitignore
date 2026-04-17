@@ -4,4 +4,3 @@ __pycache__/.venv/
 logs/
 __pycache__/
 *.save
-*.out
