@@ -1,0 +1,83 @@
+
+--- [LeftWrist] Step 5: Fine-tuning (Thu Apr 16 11:14:03 PM EDT 2026) ---
+Device: cuda
+Loading windows from /scratch/bates.car/datasets/paaws_ssl_preprocessed/LeftWrist/labeled_windows.npy ...
+  491,916 labeled windows
+Loading backbone from /scratch/bates.car/models/ssl_pretrained/LeftWrist/best_backbone.pt ...
+Classes (5): ['Biking', 'Lying_Down', 'Sitting', 'Standing', 'Walking']
+Subjects: 20
+5-fold subject-wise CV (7:1:2 split)
+
+--- Fold 1/5 ---
+  Train: 14, Val: 2, Test: 4
+  Fold 1: macro_F1=0.4233  subject_F1=0.4446  kappa=0.5059
+
+--- Fold 2/5 ---
+  Train: 14, Val: 2, Test: 4
+  Fold 2: macro_F1=0.4557  subject_F1=0.4040  kappa=0.3708
+
+--- Fold 3/5 ---
+  Train: 14, Val: 2, Test: 4
+  Fold 3: macro_F1=0.4793  subject_F1=0.5009  kappa=0.5547
+
+--- Fold 4/5 ---
+  Train: 14, Val: 2, Test: 4
+  Fold 4: macro_F1=0.4530  subject_F1=0.4412  kappa=0.3674
+
+--- Fold 5/5 ---
+  Train: 14, Val: 2, Test: 4
+  Fold 5: macro_F1=0.4055  subject_F1=0.4039  kappa=0.4499
+
+============================================================
+RESULTS SUMMARY
+============================================================
+Macro F1 (pooled):  0.4434 ± 0.0260
+Weighted F1:        0.7267
+Subject-wise F1:    0.4389 ± 0.0356
+Cohen's Kappa (κ):  0.4497 ± 0.0737
+
+Results saved to /scratch/bates.car/datasets/paaws_ssl_results/LeftWrist/cv_results.csv
+
+Pooled classification report (all folds):
+              precision    recall  f1-score   support
+
+      Biking       0.00      0.00      0.00      1821
+  Lying_Down       0.46      0.15      0.23     58443
+     Sitting       0.79      0.94      0.86    335187
+    Standing       0.48      0.29      0.36     48261
+     Walking       0.87      0.78      0.82     48204
+
+    accuracy                           0.76    491916
+   macro avg       0.52      0.43      0.45    491916
+weighted avg       0.72      0.76      0.73    491916
+
+Classification report saved to /scratch/bates.car/datasets/paaws_ssl_results/LeftWrist/classification_report.txt
+
+Confusion Matrix:
+Classes: ['Biking' 'Lying_Down' 'Sitting' 'Standing' 'Walking']
+[[     0      5    832    234    750]
+ [    23   9001  48804    554     61]
+ [    92  10396 314309   8911   1479]
+ [    26    234  30481  13997   3523]
+ [    14     69   4655   5718  37748]]
+--- [LeftWrist] Step 5 complete (Fri Apr 17 12:25:32 AM EDT 2026) ---
+
+--- Step 6: Comparing SSL vs RF results (Fri Apr 17 12:25:32 AM EDT 2026) ---
+
+SSL fine-tuning vs Random Forest — cross-validation results
+----------------------------------------------------------------------------------------------------
+Location         SSL macro-F1         SSL subject-F1          SSL kappa            RF macro-F1      
+----------------------------------------------------------------------------------------------------
+LeftWrist      0.4434 ± 0.0260       0.4389 ± 0.0356       0.4497 ± 0.0737       0.4587 ± 0.0443    
+RightAnkle            —                     —                     —              0.5960 ± 0.0574    
+RightThigh            —                     —                     —              0.7015 ± 0.0612    
+----------------------------------------------------------------------------------------------------
+
+Delta (SSL − RF) macro-F1 where both are available:
+  LeftWrist    -0.0153
+
+--- Step 6 complete (Fri Apr 17 12:25:34 AM EDT 2026) ---
+
+==============================
+Pipeline complete: Fri Apr 17 12:25:34 AM EDT 2026
+==============================
