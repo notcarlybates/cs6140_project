@@ -1,0 +1,2859 @@
+==============================
+RF HAR Pipeline
+Job ID: 5764951
+Node:   c0692
+Start:  Tue Apr  7 09:58:56 AM EDT 2026
+==============================
+
+==============================
+Processing location: LeftWrist
+==============================
+
+--- [LeftWrist] Step 1: Sync (Tue Apr  7 09:58:56 AM EDT 2026) ---
+Location:    LeftWrist
+Output path: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/
+Found 20 subjects
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_239/accel/DS_239-Free-LeftWrist.csv
+  Loaded 35,620,804 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_239/label/DS_239-Free-label.csv
+  Loaded 1909 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_239_synced.csv
+  Done. 35,620,804 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_36/accel/DS_36-Free-LeftWrist.csv
+  Loaded 48,163,348 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_36/label/DS_36-Free-label.csv
+  Loaded 3043 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_36_synced.csv
+  Done. 48,163,348 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_138/accel/DS_138-Free-LeftWrist.csv
+  Loaded 46,958,238 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_138/label/DS_138-Free-label.csv
+  Loaded 1639 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_138_synced.csv
+  Done. 46,958,238 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_38/accel/DS_38-Free-LeftWrist.csv
+  Loaded 48,365,994 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_38/label/DS_38-Free-label.csv
+  Loaded 3035 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_38_synced.csv
+  Done. 48,365,994 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_139/accel/DS_139-Free-LeftWrist.csv
+  Loaded 45,641,587 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_139/label/DS_139-Free-label.csv
+  Loaded 2620 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_139_synced.csv
+  Done. 45,641,587 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_37/accel/DS_37-Free-LeftWrist.csv
+  Loaded 48,103,575 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_37/label/DS_37-Free-label.csv
+  Loaded 3212 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_37_synced.csv
+  Done. 48,103,575 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_240/accel/DS_240-Free-LeftWrist.csv
+  Loaded 49,179,760 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_240/label/DS_240-Free-label.csv
+  Loaded 1876 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_240_synced.csv
+  Done. 49,179,760 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_42/accel/DS_42-Free-LeftWrist.csv
+  Loaded 48,186,697 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_42/label/DS_42-Free-label.csv
+  Loaded 3143 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_42_synced.csv
+  Done. 48,186,697 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_235/accel/DS_235-Free-LeftWrist.csv
+  Loaded 49,389,280 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_235/label/DS_235-Free-label.csv
+  Loaded 2238 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_235_synced.csv
+  Done. 49,389,280 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_44/accel/DS_44-Free-LeftWrist.csv
+  Loaded 48,199,884 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_44/label/DS_44-Free-label.csv
+  Loaded 2033 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_44_synced.csv
+  Done. 48,199,884 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_10/accel/DS_10-Free-LeftWrist.csv
+  Loaded 53,055,103 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_10/label/DS_10-Free-label.csv
+  Loaded 2416 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_10_synced.csv
+  Done. 53,055,103 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_49/accel/DS_49-Free-LeftWrist.csv
+  Loaded 48,141,053 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_49/label/DS_49-Free-label.csv
+  Loaded 1635 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_49_synced.csv
+  Done. 48,141,053 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_246/accel/DS_246-Free-LeftWrist.csv
+  Loaded 49,000,400 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_246/label/DS_246-Free-label.csv
+  Loaded 1782 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_246_synced.csv
+  Done. 49,000,400 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_39/accel/DS_39-Free-LeftWrist.csv
+  Loaded 47,977,436 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_39/label/DS_39-Free-label.csv
+  Loaded 4083 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_39_synced.csv
+  Done. 47,977,436 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_87/accel/DS_87-Free-LeftWrist.csv
+  Loaded 49,280,634 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_87/label/DS_87-Free-label.csv
+  Loaded 2462 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_87_synced.csv
+  Done. 49,280,634 rows saved.
+
+--- Summary ---
+[OK] DS_10
+[OK] DS_138
+[OK] DS_139
+[OK] DS_140
+[OK] DS_235
+[OK] DS_239
+[OK] DS_240
+[OK] DS_246
+[OK] DS_36
+[OK] DS_37
+[OK] DS_38
+[OK] DS_39
+[OK] DS_42
+[OK] DS_44
+[OK] DS_48
+[OK] DS_49
+[OK] DS_51
+[OK] DS_58
+[OK] DS_59
+[OK] DS_87
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_140/accel/DS_140-Free-LeftWrist.csv
+  Loaded 49,724,317 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_140/label/DS_140-Free-label.csv
+  Loaded 1286 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_140_synced.csv
+  Done. 49,724,317 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_48/accel/DS_48-Free-LeftWrist.csv
+  Loaded 48,426,532 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_48/label/DS_48-Free-label.csv
+  Loaded 2616 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_48_synced.csv
+  Done. 48,426,532 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_51/accel/DS_51-Free-LeftWrist.csv
+  Loaded 48,336,922 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_51/label/DS_51-Free-label.csv
+  Loaded 2050 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_51_synced.csv
+  Done. 48,336,922 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_58/accel/DS_58-Free-LeftWrist.csv
+  Loaded 48,063,026 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_58/label/DS_58-Free-label.csv
+  Loaded 1741 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_58_synced.csv
+  Done. 48,063,026 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_59/accel/DS_59-Free-LeftWrist.csv
+  Loaded 47,630,720 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_59/label/DS_59-Free-label.csv
+  Loaded 2479 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/DS_59_synced.csv
+  Done. 47,630,720 rows saved.
+--- [LeftWrist] Step 1 complete (Tue Apr  7 10:01:34 AM EDT 2026) ---
+
+--- [LeftWrist] Step 2: Slice (Tue Apr  7 10:01:34 AM EDT 2026) ---
+Location:    LeftWrist
+Input path:  /scratch/bates.car/datasets/paaws_fl_synced/LeftWrist/
+Output path: /scratch/bates.car/datasets/paaws_fl_trimmed/LeftWrist/
+Processing DS_10_synced.csv...
+  53,055,103 -> 35,444,303 rows (removed 17,610,800)
+Processing DS_138_synced.csv...
+  46,958,238 -> 28,225,085 rows (removed 18,733,153)
+Processing DS_139_synced.csv...
+  45,641,587 -> 26,261,159 rows (removed 19,380,428)
+Processing DS_140_synced.csv...
+  49,724,317 -> 23,570,042 rows (removed 26,154,275)
+Processing DS_235_synced.csv...
+  49,389,280 -> 24,515,038 rows (removed 24,874,242)
+Processing DS_239_synced.csv...
+  35,620,804 -> 16,809,991 rows (removed 18,810,813)
+Processing DS_240_synced.csv...
+  49,179,760 -> 25,752,587 rows (removed 23,427,173)
+Processing DS_246_synced.csv...
+  49,000,400 -> 28,442,150 rows (removed 20,558,250)
+Processing DS_36_synced.csv...
+  48,163,348 -> 28,542,590 rows (removed 19,620,758)
+Processing DS_37_synced.csv...
+  48,103,575 -> 29,046,083 rows (removed 19,057,492)
+Processing DS_38_synced.csv...
+  48,365,994 -> 29,583,246 rows (removed 18,782,748)
+Processing DS_39_synced.csv...
+  47,977,436 -> 27,580,465 rows (removed 20,396,971)
+Processing DS_42_synced.csv...
+  48,186,697 -> 27,339,593 rows (removed 20,847,104)
+Processing DS_44_synced.csv...
+  48,199,884 -> 26,163,361 rows (removed 22,036,523)
+Processing DS_48_synced.csv...
+  48,426,532 -> 27,102,282 rows (removed 21,324,250)
+Processing DS_49_synced.csv...
+  48,141,053 -> 30,323,048 rows (removed 17,818,005)
+Processing DS_51_synced.csv...
+  48,336,922 -> 20,951,406 rows (removed 27,385,516)
+Processing DS_58_synced.csv...
+  48,063,026 -> 27,897,910 rows (removed 20,165,116)
+Processing DS_59_synced.csv...
+  47,630,720 -> 28,206,656 rows (removed 19,424,064)
+Processing DS_87_synced.csv...
+  49,280,634 -> 27,649,330 rows (removed 21,631,304)
+Done.
+--- [LeftWrist] Step 2 complete (Tue Apr  7 10:05:26 AM EDT 2026) ---
+
+--- [LeftWrist] Step 3: Preprocessing (Tue Apr  7 10:05:26 AM EDT 2026) ---
+Location:    LeftWrist
+Input path:  /scratch/bates.car/datasets/paaws_fl_trimmed/LeftWrist/
+Output path: /scratch/bates.car/datasets/paaws_fl_preprocessed/LeftWrist/
+Found 20 subjects
+  Loading DS_10...
+  Dropped 10,198,678 rows with invalid/unmapped labels (25,245,625 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 31557 windows
+  Loading DS_138...
+  Dropped 7,857,440 rows with invalid/unmapped labels (20,367,645 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 25459 windows
+  Loading DS_139...
+  Dropped 10,342,507 rows with invalid/unmapped labels (15,918,652 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 19898 windows
+  Loading DS_140...
+  Dropped 10,346,447 rows with invalid/unmapped labels (13,223,595 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 16529 windows
+  Loading DS_235...
+  Dropped 6,454,279 rows with invalid/unmapped labels (18,060,759 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 22575 windows
+  Loading DS_239...
+  Dropped 5,436,721 rows with invalid/unmapped labels (11,373,270 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 14216 windows
+  Loading DS_240...
+  Dropped 8,015,251 rows with invalid/unmapped labels (17,737,336 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 22171 windows
+  Loading DS_246...
+  Dropped 7,582,506 rows with invalid/unmapped labels (20,859,644 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 26074 windows
+  Loading DS_36...
+  Dropped 5,427,861 rows with invalid/unmapped labels (23,114,729 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 28893 windows
+  Loading DS_37...
+  Dropped 8,106,336 rows with invalid/unmapped labels (20,939,747 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 26174 windows
+  Loading DS_38...
+  Dropped 5,069,675 rows with invalid/unmapped labels (24,513,571 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 30641 windows
+  Loading DS_39...
+  Dropped 5,846,602 rows with invalid/unmapped labels (21,733,863 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 27167 windows
+  Loading DS_42...
+  Dropped 4,977,620 rows with invalid/unmapped labels (22,361,973 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 27952 windows
+  Loading DS_44...
+  Dropped 3,306,144 rows with invalid/unmapped labels (22,857,217 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 28571 windows
+  Loading DS_48...
+  Dropped 6,364,156 rows with invalid/unmapped labels (20,738,126 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 25922 windows
+  Loading DS_49...
+  Dropped 4,866,343 rows with invalid/unmapped labels (25,456,705 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 31820 windows
+  Loading DS_51...
+  Dropped 6,368,844 rows with invalid/unmapped labels (14,582,562 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 18228 windows
+  Loading DS_58...
+  Dropped 9,576,084 rows with invalid/unmapped labels (18,321,826 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 22902 windows
+  Loading DS_59...
+  Dropped 8,682,052 rows with invalid/unmapped labels (19,524,604 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 24405 windows
+  Loading DS_87...
+  Dropped 11,039,483 rows with invalid/unmapped labels (16,609,847 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 20762 windows
+
+Total windows: 491916
+Saved to /scratch/bates.car/datasets/paaws_fl_preprocessed/LeftWrist/windows.npy
+--- [LeftWrist] Step 3 complete (Tue Apr  7 10:11:24 AM EDT 2026) ---
+
+--- [LeftWrist] Step 4: Feature extraction (Tue Apr  7 10:11:24 AM EDT 2026) ---
+Location:    LeftWrist
+Input path:  /scratch/bates.car/datasets/paaws_fl_preprocessed/LeftWrist/
+Output path: /scratch/bates.car/datasets/paaws_fl_features/LeftWrist/
+Loading windows...
+Loaded 491916 windows
+Extracting features...
+  Processed 0/491916 windows
+  Processed 1000/491916 windows
+  Processed 2000/491916 windows
+  Processed 3000/491916 windows
+  Processed 4000/491916 windows
+  Processed 5000/491916 windows
+  Processed 6000/491916 windows
+  Processed 7000/491916 windows
+  Processed 8000/491916 windows
+  Processed 9000/491916 windows
+  Processed 10000/491916 windows
+  Processed 11000/491916 windows
+  Processed 12000/491916 windows
+  Processed 13000/491916 windows
+  Processed 14000/491916 windows
+  Processed 15000/491916 windows
+  Processed 16000/491916 windows
+  Processed 17000/491916 windows
+  Processed 18000/491916 windows
+  Processed 19000/491916 windows
+  Processed 20000/491916 windows
+  Processed 21000/491916 windows
+  Processed 22000/491916 windows
+  Processed 23000/491916 windows
+  Processed 24000/491916 windows
+  Processed 25000/491916 windows
+  Processed 26000/491916 windows
+  Processed 27000/491916 windows
+  Processed 28000/491916 windows
+  Processed 29000/491916 windows
+  Processed 30000/491916 windows
+  Processed 31000/491916 windows
+  Processed 32000/491916 windows
+  Processed 33000/491916 windows
+  Processed 34000/491916 windows
+  Processed 35000/491916 windows
+  Processed 36000/491916 windows
+  Processed 37000/491916 windows
+  Processed 38000/491916 windows
+  Processed 39000/491916 windows
+  Processed 40000/491916 windows
+  Processed 41000/491916 windows
+  Processed 42000/491916 windows
+  Processed 43000/491916 windows
+  Processed 44000/491916 windows
+  Processed 45000/491916 windows
+  Processed 46000/491916 windows
+  Processed 47000/491916 windows
+  Processed 48000/491916 windows
+  Processed 49000/491916 windows
+  Processed 50000/491916 windows
+  Processed 51000/491916 windows
+  Processed 52000/491916 windows
+  Processed 53000/491916 windows
+  Processed 54000/491916 windows
+  Processed 55000/491916 windows
+  Processed 56000/491916 windows
+  Processed 57000/491916 windows
+  Processed 58000/491916 windows
+  Processed 59000/491916 windows
+  Processed 60000/491916 windows
+  Processed 61000/491916 windows
+  Processed 62000/491916 windows
+  Processed 63000/491916 windows
+  Processed 64000/491916 windows
+  Processed 65000/491916 windows
+  Processed 66000/491916 windows
+  Processed 67000/491916 windows
+  Processed 68000/491916 windows
+  Processed 69000/491916 windows
+  Processed 70000/491916 windows
+  Processed 71000/491916 windows
+  Processed 72000/491916 windows
+  Processed 73000/491916 windows
+  Processed 74000/491916 windows
+  Processed 75000/491916 windows
+  Processed 76000/491916 windows
+  Processed 77000/491916 windows
+  Processed 78000/491916 windows
+  Processed 79000/491916 windows
+  Processed 80000/491916 windows
+  Processed 81000/491916 windows
+  Processed 82000/491916 windows
+  Processed 83000/491916 windows
+  Processed 84000/491916 windows
+  Processed 85000/491916 windows
+  Processed 86000/491916 windows
+  Processed 87000/491916 windows
+  Processed 88000/491916 windows
+  Processed 89000/491916 windows
+  Processed 90000/491916 windows
+  Processed 91000/491916 windows
+  Processed 92000/491916 windows
+  Processed 93000/491916 windows
+  Processed 94000/491916 windows
+  Processed 95000/491916 windows
+  Processed 96000/491916 windows
+  Processed 97000/491916 windows
+  Processed 98000/491916 windows
+  Processed 99000/491916 windows
+  Processed 100000/491916 windows
+  Processed 101000/491916 windows
+  Processed 102000/491916 windows
+  Processed 103000/491916 windows
+  Processed 104000/491916 windows
+  Processed 105000/491916 windows
+  Processed 106000/491916 windows
+  Processed 107000/491916 windows
+  Processed 108000/491916 windows
+  Processed 109000/491916 windows
+  Processed 110000/491916 windows
+  Processed 111000/491916 windows
+  Processed 112000/491916 windows
+  Processed 113000/491916 windows
+  Processed 114000/491916 windows
+  Processed 115000/491916 windows
+  Processed 116000/491916 windows
+  Processed 117000/491916 windows
+  Processed 118000/491916 windows
+  Processed 119000/491916 windows
+  Processed 120000/491916 windows
+  Processed 121000/491916 windows
+  Processed 122000/491916 windows
+  Processed 123000/491916 windows
+  Processed 124000/491916 windows
+  Processed 125000/491916 windows
+  Processed 126000/491916 windows
+  Processed 127000/491916 windows
+  Processed 128000/491916 windows
+  Processed 129000/491916 windows
+  Processed 130000/491916 windows
+  Processed 131000/491916 windows
+  Processed 132000/491916 windows
+  Processed 133000/491916 windows
+  Processed 134000/491916 windows
+  Processed 135000/491916 windows
+  Processed 136000/491916 windows
+  Processed 137000/491916 windows
+  Processed 138000/491916 windows
+  Processed 139000/491916 windows
+  Processed 140000/491916 windows
+  Processed 141000/491916 windows
+  Processed 142000/491916 windows
+  Processed 143000/491916 windows
+  Processed 144000/491916 windows
+  Processed 145000/491916 windows
+  Processed 146000/491916 windows
+  Processed 147000/491916 windows
+  Processed 148000/491916 windows
+  Processed 149000/491916 windows
+  Processed 150000/491916 windows
+  Processed 151000/491916 windows
+  Processed 152000/491916 windows
+  Processed 153000/491916 windows
+  Processed 154000/491916 windows
+  Processed 155000/491916 windows
+  Processed 156000/491916 windows
+  Processed 157000/491916 windows
+  Processed 158000/491916 windows
+  Processed 159000/491916 windows
+  Processed 160000/491916 windows
+  Processed 161000/491916 windows
+  Processed 162000/491916 windows
+  Processed 163000/491916 windows
+  Processed 164000/491916 windows
+  Processed 165000/491916 windows
+  Processed 166000/491916 windows
+  Processed 167000/491916 windows
+  Processed 168000/491916 windows
+  Processed 169000/491916 windows
+  Processed 170000/491916 windows
+  Processed 171000/491916 windows
+  Processed 172000/491916 windows
+  Processed 173000/491916 windows
+  Processed 174000/491916 windows
+  Processed 175000/491916 windows
+  Processed 176000/491916 windows
+  Processed 177000/491916 windows
+  Processed 178000/491916 windows
+  Processed 179000/491916 windows
+  Processed 180000/491916 windows
+  Processed 181000/491916 windows
+  Processed 182000/491916 windows
+  Processed 183000/491916 windows
+  Processed 184000/491916 windows
+  Processed 185000/491916 windows
+  Processed 186000/491916 windows
+  Processed 187000/491916 windows
+  Processed 188000/491916 windows
+  Processed 189000/491916 windows
+  Processed 190000/491916 windows
+  Processed 191000/491916 windows
+  Processed 192000/491916 windows
+  Processed 193000/491916 windows
+  Processed 194000/491916 windows
+  Processed 195000/491916 windows
+  Processed 196000/491916 windows
+  Processed 197000/491916 windows
+  Processed 198000/491916 windows
+  Processed 199000/491916 windows
+  Processed 200000/491916 windows
+  Processed 201000/491916 windows
+  Processed 202000/491916 windows
+  Processed 203000/491916 windows
+  Processed 204000/491916 windows
+  Processed 205000/491916 windows
+  Processed 206000/491916 windows
+  Processed 207000/491916 windows
+  Processed 208000/491916 windows
+  Processed 209000/491916 windows
+  Processed 210000/491916 windows
+  Processed 211000/491916 windows
+  Processed 212000/491916 windows
+  Processed 213000/491916 windows
+  Processed 214000/491916 windows
+  Processed 215000/491916 windows
+  Processed 216000/491916 windows
+  Processed 217000/491916 windows
+  Processed 218000/491916 windows
+  Processed 219000/491916 windows
+  Processed 220000/491916 windows
+  Processed 221000/491916 windows
+  Processed 222000/491916 windows
+  Processed 223000/491916 windows
+  Processed 224000/491916 windows
+  Processed 225000/491916 windows
+  Processed 226000/491916 windows
+  Processed 227000/491916 windows
+  Processed 228000/491916 windows
+  Processed 229000/491916 windows
+  Processed 230000/491916 windows
+  Processed 231000/491916 windows
+  Processed 232000/491916 windows
+  Processed 233000/491916 windows
+  Processed 234000/491916 windows
+  Processed 235000/491916 windows
+  Processed 236000/491916 windows
+  Processed 237000/491916 windows
+  Processed 238000/491916 windows
+  Processed 239000/491916 windows
+  Processed 240000/491916 windows
+  Processed 241000/491916 windows
+  Processed 242000/491916 windows
+  Processed 243000/491916 windows
+  Processed 244000/491916 windows
+  Processed 245000/491916 windows
+  Processed 246000/491916 windows
+  Processed 247000/491916 windows
+  Processed 248000/491916 windows
+  Processed 249000/491916 windows
+  Processed 250000/491916 windows
+  Processed 251000/491916 windows
+  Processed 252000/491916 windows
+  Processed 253000/491916 windows
+  Processed 254000/491916 windows
+  Processed 255000/491916 windows
+  Processed 256000/491916 windows
+  Processed 257000/491916 windows
+  Processed 258000/491916 windows
+  Processed 259000/491916 windows
+  Processed 260000/491916 windows
+  Processed 261000/491916 windows
+  Processed 262000/491916 windows
+  Processed 263000/491916 windows
+  Processed 264000/491916 windows
+  Processed 265000/491916 windows
+  Processed 266000/491916 windows
+  Processed 267000/491916 windows
+  Processed 268000/491916 windows
+  Processed 269000/491916 windows
+  Processed 270000/491916 windows
+  Processed 271000/491916 windows
+  Processed 272000/491916 windows
+  Processed 273000/491916 windows
+  Processed 274000/491916 windows
+  Processed 275000/491916 windows
+  Processed 276000/491916 windows
+  Processed 277000/491916 windows
+  Processed 278000/491916 windows
+  Processed 279000/491916 windows
+  Processed 280000/491916 windows
+  Processed 281000/491916 windows
+  Processed 282000/491916 windows
+  Processed 283000/491916 windows
+  Processed 284000/491916 windows
+  Processed 285000/491916 windows
+  Processed 286000/491916 windows
+  Processed 287000/491916 windows
+  Processed 288000/491916 windows
+  Processed 289000/491916 windows
+  Processed 290000/491916 windows
+  Processed 291000/491916 windows
+  Processed 292000/491916 windows
+  Processed 293000/491916 windows
+  Processed 294000/491916 windows
+  Processed 295000/491916 windows
+  Processed 296000/491916 windows
+  Processed 297000/491916 windows
+  Processed 298000/491916 windows
+  Processed 299000/491916 windows
+  Processed 300000/491916 windows
+  Processed 301000/491916 windows
+  Processed 302000/491916 windows
+  Processed 303000/491916 windows
+  Processed 304000/491916 windows
+  Processed 305000/491916 windows
+  Processed 306000/491916 windows
+  Processed 307000/491916 windows
+  Processed 308000/491916 windows
+  Processed 309000/491916 windows
+  Processed 310000/491916 windows
+  Processed 311000/491916 windows
+  Processed 312000/491916 windows
+  Processed 313000/491916 windows
+  Processed 314000/491916 windows
+  Processed 315000/491916 windows
+  Processed 316000/491916 windows
+  Processed 317000/491916 windows
+  Processed 318000/491916 windows
+  Processed 319000/491916 windows
+  Processed 320000/491916 windows
+  Processed 321000/491916 windows
+  Processed 322000/491916 windows
+  Processed 323000/491916 windows
+  Processed 324000/491916 windows
+  Processed 325000/491916 windows
+  Processed 326000/491916 windows
+  Processed 327000/491916 windows
+  Processed 328000/491916 windows
+  Processed 329000/491916 windows
+  Processed 330000/491916 windows
+  Processed 331000/491916 windows
+  Processed 332000/491916 windows
+  Processed 333000/491916 windows
+  Processed 334000/491916 windows
+  Processed 335000/491916 windows
+  Processed 336000/491916 windows
+  Processed 337000/491916 windows
+  Processed 338000/491916 windows
+  Processed 339000/491916 windows
+  Processed 340000/491916 windows
+  Processed 341000/491916 windows
+  Processed 342000/491916 windows
+  Processed 343000/491916 windows
+  Processed 344000/491916 windows
+  Processed 345000/491916 windows
+  Processed 346000/491916 windows
+  Processed 347000/491916 windows
+  Processed 348000/491916 windows
+  Processed 349000/491916 windows
+  Processed 350000/491916 windows
+  Processed 351000/491916 windows
+  Processed 352000/491916 windows
+  Processed 353000/491916 windows
+  Processed 354000/491916 windows
+  Processed 355000/491916 windows
+  Processed 356000/491916 windows
+  Processed 357000/491916 windows
+  Processed 358000/491916 windows
+  Processed 359000/491916 windows
+  Processed 360000/491916 windows
+  Processed 361000/491916 windows
+  Processed 362000/491916 windows
+  Processed 363000/491916 windows
+  Processed 364000/491916 windows
+  Processed 365000/491916 windows
+  Processed 366000/491916 windows
+  Processed 367000/491916 windows
+  Processed 368000/491916 windows
+  Processed 369000/491916 windows
+  Processed 370000/491916 windows
+  Processed 371000/491916 windows
+  Processed 372000/491916 windows
+  Processed 373000/491916 windows
+  Processed 374000/491916 windows
+  Processed 375000/491916 windows
+  Processed 376000/491916 windows
+  Processed 377000/491916 windows
+  Processed 378000/491916 windows
+  Processed 379000/491916 windows
+  Processed 380000/491916 windows
+  Processed 381000/491916 windows
+  Processed 382000/491916 windows
+  Processed 383000/491916 windows
+  Processed 384000/491916 windows
+  Processed 385000/491916 windows
+  Processed 386000/491916 windows
+  Processed 387000/491916 windows
+  Processed 388000/491916 windows
+  Processed 389000/491916 windows
+  Processed 390000/491916 windows
+  Processed 391000/491916 windows
+  Processed 392000/491916 windows
+  Processed 393000/491916 windows
+  Processed 394000/491916 windows
+  Processed 395000/491916 windows
+  Processed 396000/491916 windows
+  Processed 397000/491916 windows
+  Processed 398000/491916 windows
+  Processed 399000/491916 windows
+  Processed 400000/491916 windows
+  Processed 401000/491916 windows
+  Processed 402000/491916 windows
+  Processed 403000/491916 windows
+  Processed 404000/491916 windows
+  Processed 405000/491916 windows
+  Processed 406000/491916 windows
+  Processed 407000/491916 windows
+  Processed 408000/491916 windows
+  Processed 409000/491916 windows
+  Processed 410000/491916 windows
+  Processed 411000/491916 windows
+  Processed 412000/491916 windows
+  Processed 413000/491916 windows
+  Processed 414000/491916 windows
+  Processed 415000/491916 windows
+  Processed 416000/491916 windows
+  Processed 417000/491916 windows
+  Processed 418000/491916 windows
+  Processed 419000/491916 windows
+  Processed 420000/491916 windows
+  Processed 421000/491916 windows
+  Processed 422000/491916 windows
+  Processed 423000/491916 windows
+  Processed 424000/491916 windows
+  Processed 425000/491916 windows
+  Processed 426000/491916 windows
+  Processed 427000/491916 windows
+  Processed 428000/491916 windows
+  Processed 429000/491916 windows
+  Processed 430000/491916 windows
+  Processed 431000/491916 windows
+  Processed 432000/491916 windows
+  Processed 433000/491916 windows
+  Processed 434000/491916 windows
+  Processed 435000/491916 windows
+  Processed 436000/491916 windows
+  Processed 437000/491916 windows
+  Processed 438000/491916 windows
+  Processed 439000/491916 windows
+  Processed 440000/491916 windows
+  Processed 441000/491916 windows
+  Processed 442000/491916 windows
+  Processed 443000/491916 windows
+  Processed 444000/491916 windows
+  Processed 445000/491916 windows
+  Processed 446000/491916 windows
+  Processed 447000/491916 windows
+  Processed 448000/491916 windows
+  Processed 449000/491916 windows
+  Processed 450000/491916 windows
+  Processed 451000/491916 windows
+  Processed 452000/491916 windows
+  Processed 453000/491916 windows
+  Processed 454000/491916 windows
+  Processed 455000/491916 windows
+  Processed 456000/491916 windows
+  Processed 457000/491916 windows
+  Processed 458000/491916 windows
+  Processed 459000/491916 windows
+  Processed 460000/491916 windows
+  Processed 461000/491916 windows
+  Processed 462000/491916 windows
+  Processed 463000/491916 windows
+  Processed 464000/491916 windows
+  Processed 465000/491916 windows
+  Processed 466000/491916 windows
+  Processed 467000/491916 windows
+  Processed 468000/491916 windows
+  Processed 469000/491916 windows
+  Processed 470000/491916 windows
+  Processed 471000/491916 windows
+  Processed 472000/491916 windows
+  Processed 473000/491916 windows
+  Processed 474000/491916 windows
+  Processed 475000/491916 windows
+  Processed 476000/491916 windows
+  Processed 477000/491916 windows
+  Processed 478000/491916 windows
+  Processed 479000/491916 windows
+  Processed 480000/491916 windows
+  Processed 481000/491916 windows
+  Processed 482000/491916 windows
+  Processed 483000/491916 windows
+  Processed 484000/491916 windows
+  Processed 485000/491916 windows
+  Processed 486000/491916 windows
+  Processed 487000/491916 windows
+  Processed 488000/491916 windows
+  Processed 489000/491916 windows
+  Processed 490000/491916 windows
+  Processed 491000/491916 windows
+Extracted features from 491916 windows
+Saved to /scratch/bates.car/datasets/paaws_fl_features/LeftWrist/features.npy
+Saved to /scratch/bates.car/datasets/paaws_fl_features/LeftWrist/features.csv
+
+Feature columns: ['subject_id', 'window_id', 'label', 'x_mean', 'x_std', 'x_range', 'y_mean', 'y_std', 'y_range', 'z_mean', 'z_std', 'z_range', 'corr_xy', 'corr_xz', 'corr_yz', 'mag_mean', 'mag_std', 'mag_range', 'mag_mad', 'mag_kurtosis', 'mag_skew', 'dom_freq_1', 'dom_freq_2']
+Label distribution:
+shape: (5, 2)
+┌────────────┬────────┐
+│ label      ┆ len    │
+│ ---        ┆ ---    │
+│ str        ┆ u64    │
+╞════════════╪════════╡
+│ Sitting    ┆ 335196 │
+│ Lying_Down ┆ 58443  │
+│ Walking    ┆ 48261  │
+│ Standing   ┆ 48194  │
+│ Biking     ┆ 1822   │
+└────────────┴────────┘
+--- [LeftWrist] Step 4 complete (Tue Apr  7 10:29:54 AM EDT 2026) ---
+
+--- [LeftWrist] Step 5: Training (Tue Apr  7 10:29:54 AM EDT 2026) ---
+Location:    LeftWrist
+Input path:  /scratch/bates.car/datasets/paaws_fl_features/LeftWrist/
+Output path: /scratch/bates.car/datasets/paaws_fl_results/LeftWrist/
+Loading features...
+Loaded 491916 samples, 20 features
+Subjects: 20
+Labels: ['Walking', 'Biking', 'Standing', 'Lying_Down', 'Sitting']
+
+============================================================
+Starting cross-validation with 20 subjects
+Using 5-fold subject-wise CV (7:1:2 split)
+
+--- Fold 1/5 ---
+Train: 14 subjects, Val: 2, Test: 4
+Train samples: 361682, Test samples: 93443
+Training Random Forest...
+Fold 1 Macro F1: 0.4407
+
+--- Fold 2/5 ---
+Train: 14 subjects, Val: 2, Test: 4
+Train samples: 351813, Test samples: 85036
+Training Random Forest...
+Fold 2 Macro F1: 0.4112
+
+--- Fold 3/5 ---
+Train: 14 subjects, Val: 2, Test: 4
+Train samples: 322518, Test samples: 112875
+Training Random Forest...
+Fold 3 Macro F1: 0.4568
+
+--- Fold 4/5 ---
+Train: 14 subjects, Val: 2, Test: 4
+Train samples: 336521, Test samples: 114265
+Training Random Forest...
+Fold 4 Macro F1: 0.4428
+
+--- Fold 5/5 ---
+Train: 14 subjects, Val: 2, Test: 4
+Train samples: 348603, Test samples: 86297
+Training Random Forest...
+Fold 5 Macro F1: 0.5422
+
+============================================================
+OVERALL RESULTS
+============================================================
+
+Macro F1 (all folds): 0.4369
+Mean Fold F1: 0.4587 ± 0.0443
+
+Classification Report:
+              precision    recall  f1-score   support
+
+      Biking       0.00      0.00      0.00      1822
+  Lying_Down       0.31      0.06      0.11     58443
+     Sitting       0.78      0.95      0.86    335196
+    Standing       0.55      0.32      0.40     48194
+     Walking       0.85      0.79      0.82     48261
+
+    accuracy                           0.76    491916
+   macro avg       0.50      0.42      0.44    491916
+weighted avg       0.71      0.76      0.72    491916
+
+
+Confusion Matrix:
+Classes: ['Biking' 'Lying_Down' 'Sitting' 'Standing' 'Walking']
+[[     0     11   1538    144    129]
+ [     1   3730  54412    221     79]
+ [    15   8037 318112   6961   2071]
+ [     4    199  27955  15372   4664]
+ [     9     22   4760   5302  38168]]
+
+Results saved to /scratch/bates.car/datasets/paaws_fl_results/LeftWrist/cv_results.csv
+
+Training final model on all data...
+Model saved to /scratch/bates.car/datasets/paaws_fl_results/LeftWrist/rf_model.joblib
+
+Top 10 Feature Importances:
+shape: (10, 2)
+┌──────────────┬────────────┐
+│ feature      ┆ importance │
+│ ---          ┆ ---        │
+│ str          ┆ f64        │
+╞══════════════╪════════════╡
+│ mag_mad      ┆ 0.116508   │
+│ x_mean       ┆ 0.109202   │
+│ mag_mean     ┆ 0.07613    │
+│ mag_std      ┆ 0.067312   │
+│ z_mean       ┆ 0.06344    │
+│ y_mean       ┆ 0.058056   │
+│ mag_kurtosis ┆ 0.048322   │
+│ z_std        ┆ 0.044401   │
+│ x_std        ┆ 0.043731   │
+│ x_range      ┆ 0.042429   │
+└──────────────┴────────────┘
+--- [LeftWrist] Step 5 complete (Tue Apr  7 10:34:58 AM EDT 2026) ---
+
+==============================
+Processing location: RightAnkle
+==============================
+
+--- [RightAnkle] Step 1: Sync (Tue Apr  7 10:34:58 AM EDT 2026) ---
+Location:    RightAnkle
+Output path: /scratch/bates.car/datasets/paaws_fl_synced/RightAnkle/
+Found 20 subjects
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_138/accel/DS_138-Free-RightAnkle.csv
+  Loaded 46,966,228 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_138/label/DS_138-Free-label.csv
+  Loaded 1639 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightAnkle/DS_138_synced.csv
+  Done. 46,966,228 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_36/accel/DS_36-Free-RightAnkle.csv
+  Loaded 48,162,880 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_36/label/DS_36-Free-label.csv
+  Loaded 3043 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightAnkle/DS_36_synced.csv
+  Done. 48,162,880 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_139/accel/DS_139-Free-RightAnkle.csv
+  Loaded 45,641,592 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_139/label/DS_139-Free-label.csv
+  Loaded 2620 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightAnkle/DS_139_synced.csv
+  Done. 45,641,592 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_37/accel/DS_37-Free-RightAnkle.csv
+  Loaded 48,103,815 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_37/label/DS_37-Free-label.csv
+  Loaded 3212 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightAnkle/DS_37_synced.csv
+  Done. 48,103,815 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_240/accel/DS_240-Free-RightAnkle.csv
+  Loaded 49,167,298 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_240/label/DS_240-Free-label.csv
+  Loaded 1876 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightAnkle/DS_240_synced.csv
+  Done. 49,167,298 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_38/accel/DS_38-Free-RightAnkle.csv
+  Loaded 48,366,152 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_38/label/DS_38-Free-label.csv
+  Loaded 3035 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightAnkle/DS_38_synced.csv
+  Done. 48,366,152 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_246/accel/DS_246-Free-RightAnkle.csv
+  Loaded 49,008,557 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_246/label/DS_246-Free-label.csv
+  Loaded 1782 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightAnkle/DS_246_synced.csv
+  Done. 49,008,557 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_39/accel/DS_39-Free-RightAnkle.csv
+  Loaded 46,723,330 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_39/label/DS_39-Free-label.csv
+  Loaded 4083 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightAnkle/DS_39_synced.csv
+  Done. 46,723,330 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_10/accel/DS_10-Free-RightAnkle.csv
+  Loaded 53,055,170 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_10/label/DS_10-Free-label.csv
+  Loaded 2416 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightAnkle/DS_10_synced.csv
+  Done. 53,055,170 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_49/accel/DS_49-Free-RightAnkle.csv
+  Loaded 48,140,928 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_49/label/DS_49-Free-label.csv
+  Loaded 1635 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightAnkle/DS_49_synced.csv
+  Done. 48,140,928 rows saved.
+
+--- Summary ---
+[OK] DS_10
+[OK] DS_138
+[OK] DS_139
+[OK] DS_140
+[OK] DS_235
+[OK] DS_239
+[OK] DS_240
+[OK] DS_246
+[OK] DS_36
+[OK] DS_37
+[OK] DS_38
+[OK] DS_39
+[OK] DS_42
+[OK] DS_44
+[OK] DS_48
+[OK] DS_49
+[OK] DS_51
+[OK] DS_58
+[OK] DS_59
+[OK] DS_87
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_235/accel/DS_235-Free-RightAnkle.csv
+  Loaded 49,445,623 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_235/label/DS_235-Free-label.csv
+  Loaded 2238 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightAnkle/DS_235_synced.csv
+  Done. 49,445,623 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_42/accel/DS_42-Free-RightAnkle.csv
+  Loaded 48,186,273 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_42/label/DS_42-Free-label.csv
+  Loaded 3143 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightAnkle/DS_42_synced.csv
+  Done. 48,186,273 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_239/accel/DS_239-Free-RightAnkle.csv
+  Loaded 50,144,712 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_239/label/DS_239-Free-label.csv
+  Loaded 1909 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightAnkle/DS_239_synced.csv
+  Done. 50,144,712 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_44/accel/DS_44-Free-RightAnkle.csv
+  Loaded 48,199,613 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_44/label/DS_44-Free-label.csv
+  Loaded 2033 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightAnkle/DS_44_synced.csv
+  Done. 48,199,613 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_140/accel/DS_140-Free-RightAnkle.csv
+  Loaded 49,707,680 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_140/label/DS_140-Free-label.csv
+  Loaded 1286 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightAnkle/DS_140_synced.csv
+  Done. 49,707,680 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_48/accel/DS_48-Free-RightAnkle.csv
+  Loaded 48,426,356 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_48/label/DS_48-Free-label.csv
+  Loaded 2616 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightAnkle/DS_48_synced.csv
+  Done. 48,426,356 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_51/accel/DS_51-Free-RightAnkle.csv
+  Loaded 48,337,179 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_51/label/DS_51-Free-label.csv
+  Loaded 2050 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightAnkle/DS_51_synced.csv
+  Done. 48,337,179 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_58/accel/DS_58-Free-RightAnkle.csv
+  Loaded 48,063,300 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_58/label/DS_58-Free-label.csv
+  Loaded 1741 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightAnkle/DS_58_synced.csv
+  Done. 48,063,300 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_59/accel/DS_59-Free-RightAnkle.csv
+  Loaded 47,630,501 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_59/label/DS_59-Free-label.csv
+  Loaded 2479 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightAnkle/DS_59_synced.csv
+  Done. 47,630,501 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_87/accel/DS_87-Free-RightAnkle.csv
+  Loaded 49,280,630 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_87/label/DS_87-Free-label.csv
+  Loaded 2462 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightAnkle/DS_87_synced.csv
+  Done. 49,280,630 rows saved.
+--- [RightAnkle] Step 1 complete (Tue Apr  7 10:36:59 AM EDT 2026) ---
+
+--- [RightAnkle] Step 2: Slice (Tue Apr  7 10:36:59 AM EDT 2026) ---
+Location:    RightAnkle
+Input path:  /scratch/bates.car/datasets/paaws_fl_synced/RightAnkle/
+Output path: /scratch/bates.car/datasets/paaws_fl_trimmed/RightAnkle/
+Processing DS_10_synced.csv...
+  53,055,170 -> 35,444,303 rows (removed 17,610,867)
+Processing DS_138_synced.csv...
+  46,966,228 -> 28,225,085 rows (removed 18,741,143)
+Processing DS_139_synced.csv...
+  45,641,592 -> 26,261,159 rows (removed 19,380,433)
+Processing DS_140_synced.csv...
+  49,707,680 -> 23,570,042 rows (removed 26,137,638)
+Processing DS_235_synced.csv...
+  49,445,623 -> 24,515,038 rows (removed 24,930,585)
+Processing DS_239_synced.csv...
+  50,144,712 -> 24,134,144 rows (removed 26,010,568)
+Processing DS_240_synced.csv...
+  49,167,298 -> 25,752,587 rows (removed 23,414,711)
+Processing DS_246_synced.csv...
+  49,008,557 -> 28,442,150 rows (removed 20,566,407)
+Processing DS_36_synced.csv...
+  48,162,880 -> 28,542,590 rows (removed 19,620,290)
+Processing DS_37_synced.csv...
+  48,103,815 -> 29,046,083 rows (removed 19,057,732)
+Processing DS_38_synced.csv...
+  48,366,152 -> 29,583,246 rows (removed 18,782,906)
+Processing DS_39_synced.csv...
+  46,723,330 -> 26,401,122 rows (removed 20,322,208)
+Processing DS_42_synced.csv...
+  48,186,273 -> 27,339,593 rows (removed 20,846,680)
+Processing DS_44_synced.csv...
+  48,199,613 -> 26,163,361 rows (removed 22,036,252)
+Processing DS_48_synced.csv...
+  48,426,356 -> 27,102,282 rows (removed 21,324,074)
+Processing DS_49_synced.csv...
+  48,140,928 -> 30,323,048 rows (removed 17,817,880)
+Processing DS_51_synced.csv...
+  48,337,179 -> 20,951,406 rows (removed 27,385,773)
+Processing DS_58_synced.csv...
+  48,063,300 -> 27,897,910 rows (removed 20,165,390)
+Processing DS_59_synced.csv...
+  47,630,501 -> 28,206,656 rows (removed 19,423,845)
+Processing DS_87_synced.csv...
+  49,280,630 -> 27,649,330 rows (removed 21,631,300)
+Done.
+--- [RightAnkle] Step 2 complete (Tue Apr  7 10:40:42 AM EDT 2026) ---
+
+--- [RightAnkle] Step 3: Preprocessing (Tue Apr  7 10:40:42 AM EDT 2026) ---
+Location:    RightAnkle
+Input path:  /scratch/bates.car/datasets/paaws_fl_trimmed/RightAnkle/
+Output path: /scratch/bates.car/datasets/paaws_fl_preprocessed/RightAnkle/
+Found 20 subjects
+  Loading DS_10...
+  Dropped 10,198,678 rows with invalid/unmapped labels (25,245,625 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 31557 windows
+  Loading DS_138...
+  Dropped 7,857,440 rows with invalid/unmapped labels (20,367,645 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 25459 windows
+  Loading DS_139...
+  Dropped 10,342,507 rows with invalid/unmapped labels (15,918,652 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 19898 windows
+  Loading DS_140...
+  Dropped 10,346,447 rows with invalid/unmapped labels (13,223,595 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 16529 windows
+  Loading DS_235...
+  Dropped 6,454,279 rows with invalid/unmapped labels (18,060,759 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 22575 windows
+  Loading DS_239...
+  Dropped 6,655,872 rows with invalid/unmapped labels (17,478,272 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 21847 windows
+  Loading DS_240...
+  Dropped 8,015,251 rows with invalid/unmapped labels (17,737,336 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 22171 windows
+  Loading DS_246...
+  Dropped 7,582,506 rows with invalid/unmapped labels (20,859,644 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 26074 windows
+  Loading DS_36...
+  Dropped 5,427,861 rows with invalid/unmapped labels (23,114,729 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 28893 windows
+  Loading DS_37...
+  Dropped 8,106,336 rows with invalid/unmapped labels (20,939,747 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 26174 windows
+  Loading DS_38...
+  Dropped 5,069,675 rows with invalid/unmapped labels (24,513,571 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 30641 windows
+  Loading DS_39...
+  Dropped 5,831,164 rows with invalid/unmapped labels (20,569,958 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 25712 windows
+  Loading DS_42...
+  Dropped 4,977,620 rows with invalid/unmapped labels (22,361,973 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 27952 windows
+  Loading DS_44...
+  Dropped 3,306,144 rows with invalid/unmapped labels (22,857,217 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 28571 windows
+  Loading DS_48...
+  Dropped 6,364,156 rows with invalid/unmapped labels (20,738,126 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 25922 windows
+  Loading DS_49...
+  Dropped 4,866,343 rows with invalid/unmapped labels (25,456,705 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 31820 windows
+  Loading DS_51...
+  Dropped 6,368,844 rows with invalid/unmapped labels (14,582,562 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 18228 windows
+  Loading DS_58...
+  Dropped 9,576,084 rows with invalid/unmapped labels (18,321,826 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 22902 windows
+  Loading DS_59...
+  Dropped 8,682,052 rows with invalid/unmapped labels (19,524,604 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 24405 windows
+  Loading DS_87...
+  Dropped 11,039,483 rows with invalid/unmapped labels (16,609,847 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 20762 windows
+
+Total windows: 498092
+Saved to /scratch/bates.car/datasets/paaws_fl_preprocessed/RightAnkle/windows.npy
+--- [RightAnkle] Step 3 complete (Tue Apr  7 10:46:36 AM EDT 2026) ---
+
+--- [RightAnkle] Step 4: Feature extraction (Tue Apr  7 10:46:36 AM EDT 2026) ---
+Location:    RightAnkle
+Input path:  /scratch/bates.car/datasets/paaws_fl_preprocessed/RightAnkle/
+Output path: /scratch/bates.car/datasets/paaws_fl_features/RightAnkle/
+Loading windows...
+Loaded 498092 windows
+Extracting features...
+  Processed 0/498092 windows
+  Processed 1000/498092 windows
+  Processed 2000/498092 windows
+  Processed 3000/498092 windows
+  Processed 4000/498092 windows
+  Processed 5000/498092 windows
+  Processed 6000/498092 windows
+  Processed 7000/498092 windows
+  Processed 8000/498092 windows
+  Processed 9000/498092 windows
+  Processed 10000/498092 windows
+  Processed 11000/498092 windows
+  Processed 12000/498092 windows
+  Processed 13000/498092 windows
+  Processed 14000/498092 windows
+  Processed 15000/498092 windows
+  Processed 16000/498092 windows
+  Processed 17000/498092 windows
+  Processed 18000/498092 windows
+  Processed 19000/498092 windows
+  Processed 20000/498092 windows
+  Processed 21000/498092 windows
+  Processed 22000/498092 windows
+  Processed 23000/498092 windows
+  Processed 24000/498092 windows
+  Processed 25000/498092 windows
+  Processed 26000/498092 windows
+  Processed 27000/498092 windows
+  Processed 28000/498092 windows
+  Processed 29000/498092 windows
+  Processed 30000/498092 windows
+  Processed 31000/498092 windows
+  Processed 32000/498092 windows
+  Processed 33000/498092 windows
+  Processed 34000/498092 windows
+  Processed 35000/498092 windows
+  Processed 36000/498092 windows
+  Processed 37000/498092 windows
+  Processed 38000/498092 windows
+  Processed 39000/498092 windows
+  Processed 40000/498092 windows
+  Processed 41000/498092 windows
+  Processed 42000/498092 windows
+  Processed 43000/498092 windows
+  Processed 44000/498092 windows
+  Processed 45000/498092 windows
+  Processed 46000/498092 windows
+  Processed 47000/498092 windows
+  Processed 48000/498092 windows
+  Processed 49000/498092 windows
+  Processed 50000/498092 windows
+  Processed 51000/498092 windows
+  Processed 52000/498092 windows
+  Processed 53000/498092 windows
+  Processed 54000/498092 windows
+  Processed 55000/498092 windows
+  Processed 56000/498092 windows
+  Processed 57000/498092 windows
+  Processed 58000/498092 windows
+  Processed 59000/498092 windows
+  Processed 60000/498092 windows
+  Processed 61000/498092 windows
+  Processed 62000/498092 windows
+  Processed 63000/498092 windows
+  Processed 64000/498092 windows
+  Processed 65000/498092 windows
+  Processed 66000/498092 windows
+  Processed 67000/498092 windows
+  Processed 68000/498092 windows
+  Processed 69000/498092 windows
+  Processed 70000/498092 windows
+  Processed 71000/498092 windows
+  Processed 72000/498092 windows
+  Processed 73000/498092 windows
+  Processed 74000/498092 windows
+  Processed 75000/498092 windows
+  Processed 76000/498092 windows
+  Processed 77000/498092 windows
+  Processed 78000/498092 windows
+  Processed 79000/498092 windows
+  Processed 80000/498092 windows
+  Processed 81000/498092 windows
+  Processed 82000/498092 windows
+  Processed 83000/498092 windows
+  Processed 84000/498092 windows
+  Processed 85000/498092 windows
+  Processed 86000/498092 windows
+  Processed 87000/498092 windows
+  Processed 88000/498092 windows
+  Processed 89000/498092 windows
+  Processed 90000/498092 windows
+  Processed 91000/498092 windows
+  Processed 92000/498092 windows
+  Processed 93000/498092 windows
+  Processed 94000/498092 windows
+  Processed 95000/498092 windows
+  Processed 96000/498092 windows
+  Processed 97000/498092 windows
+  Processed 98000/498092 windows
+  Processed 99000/498092 windows
+  Processed 100000/498092 windows
+  Processed 101000/498092 windows
+  Processed 102000/498092 windows
+  Processed 103000/498092 windows
+  Processed 104000/498092 windows
+  Processed 105000/498092 windows
+  Processed 106000/498092 windows
+  Processed 107000/498092 windows
+  Processed 108000/498092 windows
+  Processed 109000/498092 windows
+  Processed 110000/498092 windows
+  Processed 111000/498092 windows
+  Processed 112000/498092 windows
+  Processed 113000/498092 windows
+  Processed 114000/498092 windows
+  Processed 115000/498092 windows
+  Processed 116000/498092 windows
+  Processed 117000/498092 windows
+  Processed 118000/498092 windows
+  Processed 119000/498092 windows
+  Processed 120000/498092 windows
+  Processed 121000/498092 windows
+  Processed 122000/498092 windows
+  Processed 123000/498092 windows
+  Processed 124000/498092 windows
+  Processed 125000/498092 windows
+  Processed 126000/498092 windows
+  Processed 127000/498092 windows
+  Processed 128000/498092 windows
+  Processed 129000/498092 windows
+  Processed 130000/498092 windows
+  Processed 131000/498092 windows
+  Processed 132000/498092 windows
+  Processed 133000/498092 windows
+  Processed 134000/498092 windows
+  Processed 135000/498092 windows
+  Processed 136000/498092 windows
+  Processed 137000/498092 windows
+  Processed 138000/498092 windows
+  Processed 139000/498092 windows
+  Processed 140000/498092 windows
+  Processed 141000/498092 windows
+  Processed 142000/498092 windows
+  Processed 143000/498092 windows
+  Processed 144000/498092 windows
+  Processed 145000/498092 windows
+  Processed 146000/498092 windows
+  Processed 147000/498092 windows
+  Processed 148000/498092 windows
+  Processed 149000/498092 windows
+  Processed 150000/498092 windows
+  Processed 151000/498092 windows
+  Processed 152000/498092 windows
+  Processed 153000/498092 windows
+  Processed 154000/498092 windows
+  Processed 155000/498092 windows
+  Processed 156000/498092 windows
+  Processed 157000/498092 windows
+  Processed 158000/498092 windows
+  Processed 159000/498092 windows
+  Processed 160000/498092 windows
+  Processed 161000/498092 windows
+  Processed 162000/498092 windows
+  Processed 163000/498092 windows
+  Processed 164000/498092 windows
+  Processed 165000/498092 windows
+  Processed 166000/498092 windows
+  Processed 167000/498092 windows
+  Processed 168000/498092 windows
+  Processed 169000/498092 windows
+  Processed 170000/498092 windows
+  Processed 171000/498092 windows
+  Processed 172000/498092 windows
+  Processed 173000/498092 windows
+  Processed 174000/498092 windows
+  Processed 175000/498092 windows
+  Processed 176000/498092 windows
+  Processed 177000/498092 windows
+  Processed 178000/498092 windows
+  Processed 179000/498092 windows
+  Processed 180000/498092 windows
+  Processed 181000/498092 windows
+  Processed 182000/498092 windows
+  Processed 183000/498092 windows
+  Processed 184000/498092 windows
+  Processed 185000/498092 windows
+  Processed 186000/498092 windows
+  Processed 187000/498092 windows
+  Processed 188000/498092 windows
+  Processed 189000/498092 windows
+  Processed 190000/498092 windows
+  Processed 191000/498092 windows
+  Processed 192000/498092 windows
+  Processed 193000/498092 windows
+  Processed 194000/498092 windows
+  Processed 195000/498092 windows
+  Processed 196000/498092 windows
+  Processed 197000/498092 windows
+  Processed 198000/498092 windows
+  Processed 199000/498092 windows
+  Processed 200000/498092 windows
+  Processed 201000/498092 windows
+  Processed 202000/498092 windows
+  Processed 203000/498092 windows
+  Processed 204000/498092 windows
+  Processed 205000/498092 windows
+  Processed 206000/498092 windows
+  Processed 207000/498092 windows
+  Processed 208000/498092 windows
+  Processed 209000/498092 windows
+  Processed 210000/498092 windows
+  Processed 211000/498092 windows
+  Processed 212000/498092 windows
+  Processed 213000/498092 windows
+  Processed 214000/498092 windows
+  Processed 215000/498092 windows
+  Processed 216000/498092 windows
+  Processed 217000/498092 windows
+  Processed 218000/498092 windows
+  Processed 219000/498092 windows
+  Processed 220000/498092 windows
+  Processed 221000/498092 windows
+  Processed 222000/498092 windows
+  Processed 223000/498092 windows
+  Processed 224000/498092 windows
+  Processed 225000/498092 windows
+  Processed 226000/498092 windows
+  Processed 227000/498092 windows
+  Processed 228000/498092 windows
+  Processed 229000/498092 windows
+  Processed 230000/498092 windows
+  Processed 231000/498092 windows
+  Processed 232000/498092 windows
+  Processed 233000/498092 windows
+  Processed 234000/498092 windows
+  Processed 235000/498092 windows
+  Processed 236000/498092 windows
+  Processed 237000/498092 windows
+  Processed 238000/498092 windows
+  Processed 239000/498092 windows
+  Processed 240000/498092 windows
+  Processed 241000/498092 windows
+  Processed 242000/498092 windows
+  Processed 243000/498092 windows
+  Processed 244000/498092 windows
+  Processed 245000/498092 windows
+  Processed 246000/498092 windows
+  Processed 247000/498092 windows
+  Processed 248000/498092 windows
+  Processed 249000/498092 windows
+  Processed 250000/498092 windows
+  Processed 251000/498092 windows
+  Processed 252000/498092 windows
+  Processed 253000/498092 windows
+  Processed 254000/498092 windows
+  Processed 255000/498092 windows
+  Processed 256000/498092 windows
+  Processed 257000/498092 windows
+  Processed 258000/498092 windows
+  Processed 259000/498092 windows
+  Processed 260000/498092 windows
+  Processed 261000/498092 windows
+  Processed 262000/498092 windows
+  Processed 263000/498092 windows
+  Processed 264000/498092 windows
+  Processed 265000/498092 windows
+  Processed 266000/498092 windows
+  Processed 267000/498092 windows
+  Processed 268000/498092 windows
+  Processed 269000/498092 windows
+  Processed 270000/498092 windows
+  Processed 271000/498092 windows
+  Processed 272000/498092 windows
+  Processed 273000/498092 windows
+  Processed 274000/498092 windows
+  Processed 275000/498092 windows
+  Processed 276000/498092 windows
+  Processed 277000/498092 windows
+  Processed 278000/498092 windows
+  Processed 279000/498092 windows
+  Processed 280000/498092 windows
+  Processed 281000/498092 windows
+  Processed 282000/498092 windows
+  Processed 283000/498092 windows
+  Processed 284000/498092 windows
+  Processed 285000/498092 windows
+  Processed 286000/498092 windows
+  Processed 287000/498092 windows
+  Processed 288000/498092 windows
+  Processed 289000/498092 windows
+  Processed 290000/498092 windows
+  Processed 291000/498092 windows
+  Processed 292000/498092 windows
+  Processed 293000/498092 windows
+  Processed 294000/498092 windows
+  Processed 295000/498092 windows
+  Processed 296000/498092 windows
+  Processed 297000/498092 windows
+  Processed 298000/498092 windows
+  Processed 299000/498092 windows
+  Processed 300000/498092 windows
+  Processed 301000/498092 windows
+  Processed 302000/498092 windows
+  Processed 303000/498092 windows
+  Processed 304000/498092 windows
+  Processed 305000/498092 windows
+  Processed 306000/498092 windows
+  Processed 307000/498092 windows
+  Processed 308000/498092 windows
+  Processed 309000/498092 windows
+  Processed 310000/498092 windows
+  Processed 311000/498092 windows
+  Processed 312000/498092 windows
+  Processed 313000/498092 windows
+  Processed 314000/498092 windows
+  Processed 315000/498092 windows
+  Processed 316000/498092 windows
+  Processed 317000/498092 windows
+  Processed 318000/498092 windows
+  Processed 319000/498092 windows
+  Processed 320000/498092 windows
+  Processed 321000/498092 windows
+  Processed 322000/498092 windows
+  Processed 323000/498092 windows
+  Processed 324000/498092 windows
+  Processed 325000/498092 windows
+  Processed 326000/498092 windows
+  Processed 327000/498092 windows
+  Processed 328000/498092 windows
+  Processed 329000/498092 windows
+  Processed 330000/498092 windows
+  Processed 331000/498092 windows
+  Processed 332000/498092 windows
+  Processed 333000/498092 windows
+  Processed 334000/498092 windows
+  Processed 335000/498092 windows
+  Processed 336000/498092 windows
+  Processed 337000/498092 windows
+  Processed 338000/498092 windows
+  Processed 339000/498092 windows
+  Processed 340000/498092 windows
+  Processed 341000/498092 windows
+  Processed 342000/498092 windows
+  Processed 343000/498092 windows
+  Processed 344000/498092 windows
+  Processed 345000/498092 windows
+  Processed 346000/498092 windows
+  Processed 347000/498092 windows
+  Processed 348000/498092 windows
+  Processed 349000/498092 windows
+  Processed 350000/498092 windows
+  Processed 351000/498092 windows
+  Processed 352000/498092 windows
+  Processed 353000/498092 windows
+  Processed 354000/498092 windows
+  Processed 355000/498092 windows
+  Processed 356000/498092 windows
+  Processed 357000/498092 windows
+  Processed 358000/498092 windows
+  Processed 359000/498092 windows
+  Processed 360000/498092 windows
+  Processed 361000/498092 windows
+  Processed 362000/498092 windows
+  Processed 363000/498092 windows
+  Processed 364000/498092 windows
+  Processed 365000/498092 windows
+  Processed 366000/498092 windows
+  Processed 367000/498092 windows
+  Processed 368000/498092 windows
+  Processed 369000/498092 windows
+  Processed 370000/498092 windows
+  Processed 371000/498092 windows
+  Processed 372000/498092 windows
+  Processed 373000/498092 windows
+  Processed 374000/498092 windows
+  Processed 375000/498092 windows
+  Processed 376000/498092 windows
+  Processed 377000/498092 windows
+  Processed 378000/498092 windows
+  Processed 379000/498092 windows
+  Processed 380000/498092 windows
+  Processed 381000/498092 windows
+  Processed 382000/498092 windows
+  Processed 383000/498092 windows
+  Processed 384000/498092 windows
+  Processed 385000/498092 windows
+  Processed 386000/498092 windows
+  Processed 387000/498092 windows
+  Processed 388000/498092 windows
+  Processed 389000/498092 windows
+  Processed 390000/498092 windows
+  Processed 391000/498092 windows
+  Processed 392000/498092 windows
+  Processed 393000/498092 windows
+  Processed 394000/498092 windows
+  Processed 395000/498092 windows
+  Processed 396000/498092 windows
+  Processed 397000/498092 windows
+  Processed 398000/498092 windows
+  Processed 399000/498092 windows
+  Processed 400000/498092 windows
+  Processed 401000/498092 windows
+  Processed 402000/498092 windows
+  Processed 403000/498092 windows
+  Processed 404000/498092 windows
+  Processed 405000/498092 windows
+  Processed 406000/498092 windows
+  Processed 407000/498092 windows
+  Processed 408000/498092 windows
+  Processed 409000/498092 windows
+  Processed 410000/498092 windows
+  Processed 411000/498092 windows
+  Processed 412000/498092 windows
+  Processed 413000/498092 windows
+  Processed 414000/498092 windows
+  Processed 415000/498092 windows
+  Processed 416000/498092 windows
+  Processed 417000/498092 windows
+  Processed 418000/498092 windows
+  Processed 419000/498092 windows
+  Processed 420000/498092 windows
+  Processed 421000/498092 windows
+  Processed 422000/498092 windows
+  Processed 423000/498092 windows
+  Processed 424000/498092 windows
+  Processed 425000/498092 windows
+  Processed 426000/498092 windows
+  Processed 427000/498092 windows
+  Processed 428000/498092 windows
+  Processed 429000/498092 windows
+  Processed 430000/498092 windows
+  Processed 431000/498092 windows
+  Processed 432000/498092 windows
+  Processed 433000/498092 windows
+  Processed 434000/498092 windows
+  Processed 435000/498092 windows
+  Processed 436000/498092 windows
+  Processed 437000/498092 windows
+  Processed 438000/498092 windows
+  Processed 439000/498092 windows
+  Processed 440000/498092 windows
+  Processed 441000/498092 windows
+  Processed 442000/498092 windows
+  Processed 443000/498092 windows
+  Processed 444000/498092 windows
+  Processed 445000/498092 windows
+  Processed 446000/498092 windows
+  Processed 447000/498092 windows
+  Processed 448000/498092 windows
+  Processed 449000/498092 windows
+  Processed 450000/498092 windows
+  Processed 451000/498092 windows
+  Processed 452000/498092 windows
+  Processed 453000/498092 windows
+  Processed 454000/498092 windows
+  Processed 455000/498092 windows
+  Processed 456000/498092 windows
+  Processed 457000/498092 windows
+  Processed 458000/498092 windows
+  Processed 459000/498092 windows
+  Processed 460000/498092 windows
+  Processed 461000/498092 windows
+  Processed 462000/498092 windows
+  Processed 463000/498092 windows
+  Processed 464000/498092 windows
+  Processed 465000/498092 windows
+  Processed 466000/498092 windows
+  Processed 467000/498092 windows
+  Processed 468000/498092 windows
+  Processed 469000/498092 windows
+  Processed 470000/498092 windows
+  Processed 471000/498092 windows
+  Processed 472000/498092 windows
+  Processed 473000/498092 windows
+  Processed 474000/498092 windows
+  Processed 475000/498092 windows
+  Processed 476000/498092 windows
+  Processed 477000/498092 windows
+  Processed 478000/498092 windows
+  Processed 479000/498092 windows
+  Processed 480000/498092 windows
+  Processed 481000/498092 windows
+  Processed 482000/498092 windows
+  Processed 483000/498092 windows
+  Processed 484000/498092 windows
+  Processed 485000/498092 windows
+  Processed 486000/498092 windows
+  Processed 487000/498092 windows
+  Processed 488000/498092 windows
+  Processed 489000/498092 windows
+  Processed 490000/498092 windows
+  Processed 491000/498092 windows
+  Processed 492000/498092 windows
+  Processed 493000/498092 windows
+  Processed 494000/498092 windows
+  Processed 495000/498092 windows
+  Processed 496000/498092 windows
+  Processed 497000/498092 windows
+  Processed 498000/498092 windows
+Extracted features from 498092 windows
+Saved to /scratch/bates.car/datasets/paaws_fl_features/RightAnkle/features.npy
+Saved to /scratch/bates.car/datasets/paaws_fl_features/RightAnkle/features.csv
+
+Feature columns: ['subject_id', 'window_id', 'label', 'x_mean', 'x_std', 'x_range', 'y_mean', 'y_std', 'y_range', 'z_mean', 'z_std', 'z_range', 'corr_xy', 'corr_xz', 'corr_yz', 'mag_mean', 'mag_std', 'mag_range', 'mag_mad', 'mag_kurtosis', 'mag_skew', 'dom_freq_1', 'dom_freq_2']
+Label distribution:
+shape: (5, 2)
+┌────────────┬────────┐
+│ label      ┆ len    │
+│ ---        ┆ ---    │
+│ str        ┆ u64    │
+╞════════════╪════════╡
+│ Sitting    ┆ 340259 │
+│ Lying_Down ┆ 59623  │
+│ Standing   ┆ 48301  │
+│ Walking    ┆ 48087  │
+│ Biking     ┆ 1822   │
+└────────────┴────────┘
+--- [RightAnkle] Step 4 complete (Tue Apr  7 11:04:10 AM EDT 2026) ---
+
+--- [RightAnkle] Step 5: Training (Tue Apr  7 11:04:10 AM EDT 2026) ---
+Location:    RightAnkle
+Input path:  /scratch/bates.car/datasets/paaws_fl_features/RightAnkle/
+Output path: /scratch/bates.car/datasets/paaws_fl_results/RightAnkle/
+Loading features...
+Loaded 498092 samples, 20 features
+Subjects: 20
+Labels: ['Biking', 'Sitting', 'Walking', 'Lying_Down', 'Standing']
+
+============================================================
+Starting cross-validation with 20 subjects
+Using 5-fold subject-wise CV (7:1:2 split)
+
+--- Fold 1/5 ---
+Train: 14 subjects, Val: 2, Test: 4
+Train samples: 360227, Test samples: 93443
+Training Random Forest...
+Fold 1 Macro F1: 0.6807
+
+--- Fold 2/5 ---
+Train: 14 subjects, Val: 2, Test: 4
+Train samples: 350358, Test samples: 92667
+Training Random Forest...
+Fold 2 Macro F1: 0.5589
+
+--- Fold 3/5 ---
+Train: 14 subjects, Val: 2, Test: 4
+Train samples: 330149, Test samples: 111420
+Training Random Forest...
+Fold 3 Macro F1: 0.5925
+
+--- Fold 4/5 ---
+Train: 14 subjects, Val: 2, Test: 4
+Train samples: 342697, Test samples: 114265
+Training Random Forest...
+Fold 4 Macro F1: 0.5151
+
+--- Fold 5/5 ---
+Train: 14 subjects, Val: 2, Test: 4
+Train samples: 354779, Test samples: 86297
+Training Random Forest...
+Fold 5 Macro F1: 0.6327
+
+============================================================
+OVERALL RESULTS
+============================================================
+
+Macro F1 (all folds): 0.6857
+Mean Fold F1: 0.5960 ± 0.0574
+
+Classification Report:
+              precision    recall  f1-score   support
+
+      Biking       1.00      0.66      0.79      1822
+  Lying_Down       0.38      0.21      0.27     59623
+     Sitting       0.82      0.92      0.87    340259
+    Standing       0.70      0.55      0.61     48301
+     Walking       0.89      0.86      0.88     48087
+
+    accuracy                           0.79    498092
+   macro avg       0.76      0.64      0.69    498092
+weighted avg       0.77      0.79      0.77    498092
+
+
+Confusion Matrix:
+Classes: ['Biking' 'Lying_Down' 'Sitting' 'Standing' 'Walking']
+[[  1204      0    450     35    133]
+ [     0  12708  46823     71     21]
+ [     1  20228 312132   6873   1025]
+ [     2    304  17827  26467   3701]
+ [     3     61   2010   4466  41547]]
+
+Results saved to /scratch/bates.car/datasets/paaws_fl_results/RightAnkle/cv_results.csv
+
+Training final model on all data...
+Model saved to /scratch/bates.car/datasets/paaws_fl_results/RightAnkle/rf_model.joblib
+
+Top 10 Feature Importances:
+shape: (10, 2)
+┌───────────┬────────────┐
+│ feature   ┆ importance │
+│ ---       ┆ ---        │
+│ str       ┆ f64        │
+╞═══════════╪════════════╡
+│ x_mean    ┆ 0.153464   │
+│ mag_mean  ┆ 0.101909   │
+│ y_range   ┆ 0.087322   │
+│ z_mean    ┆ 0.062185   │
+│ y_mean    ┆ 0.061127   │
+│ mag_range ┆ 0.056542   │
+│ mag_std   ┆ 0.055251   │
+│ y_std     ┆ 0.051749   │
+│ z_range   ┆ 0.042697   │
+│ x_range   ┆ 0.038269   │
+└───────────┴────────────┘
+--- [RightAnkle] Step 5 complete (Tue Apr  7 11:09:16 AM EDT 2026) ---
+
+==============================
+Processing location: RightThigh
+==============================
+
+--- [RightThigh] Step 1: Sync (Tue Apr  7 11:09:16 AM EDT 2026) ---
+Location:    RightThigh
+Output path: /scratch/bates.car/datasets/paaws_fl_synced/RightThigh/
+Found 20 subjects
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_138/accel/DS_138-Free-RightThigh.csv
+  Loaded 46,958,371 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_138/label/DS_138-Free-label.csv
+  Loaded 1639 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightThigh/DS_138_synced.csv
+  Done. 46,958,371 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_37/accel/DS_37-Free-RightThigh.csv
+  Loaded 48,103,639 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_37/label/DS_37-Free-label.csv
+  Loaded 3212 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightThigh/DS_37_synced.csv
+  Done. 48,103,639 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_140/accel/DS_140-Free-RightThigh.csv
+  Loaded 49,707,626 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_140/label/DS_140-Free-label.csv
+  Loaded 1286 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightThigh/DS_140_synced.csv
+  Done. 49,707,626 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_44/accel/DS_44-Free-RightThigh.csv
+  Loaded 48,200,000 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_44/label/DS_44-Free-label.csv
+  Loaded 2033 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightThigh/DS_44_synced.csv
+  Done. 48,200,000 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_240/accel/DS_240-Free-RightThigh.csv
+  Loaded 49,188,239 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_240/label/DS_240-Free-label.csv
+  Loaded 1876 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightThigh/DS_240_synced.csv
+  Done. 49,188,239 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_39/accel/DS_39-Free-RightThigh.csv
+  Loaded 47,977,051 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_39/label/DS_39-Free-label.csv
+  Loaded 4083 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightThigh/DS_39_synced.csv
+  Done. 47,977,051 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_139/accel/DS_139-Free-RightThigh.csv
+  Loaded 45,686,954 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_139/label/DS_139-Free-label.csv
+  Loaded 2620 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightThigh/DS_139_synced.csv
+  Done. 45,686,954 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_36/accel/DS_36-Free-RightThigh.csv
+  Loaded 48,163,210 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_36/label/DS_36-Free-label.csv
+  Loaded 3043 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightThigh/DS_36_synced.csv
+  Done. 48,163,210 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_51/accel/DS_51-Free-RightThigh.csv
+  Loaded 48,337,020 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_51/label/DS_51-Free-label.csv
+  Loaded 2050 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightThigh/DS_51_synced.csv
+  Done. 48,337,020 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_235/accel/DS_235-Free-RightThigh.csv
+  Loaded 45,177,741 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_235/label/DS_235-Free-label.csv
+  Loaded 2238 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightThigh/DS_235_synced.csv
+  Done. 45,177,741 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_38/accel/DS_38-Free-RightThigh.csv
+  Loaded 48,365,995 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_38/label/DS_38-Free-label.csv
+  Loaded 3035 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightThigh/DS_38_synced.csv
+  Done. 48,365,995 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_58/accel/DS_58-Free-RightThigh.csv
+  Loaded 48,063,200 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_58/label/DS_58-Free-label.csv
+  Loaded 1741 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightThigh/DS_58_synced.csv
+  Done. 48,063,200 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_246/accel/DS_246-Free-RightThigh.csv
+  Loaded 49,018,228 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_246/label/DS_246-Free-label.csv
+  Loaded 1782 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightThigh/DS_246_synced.csv
+  Done. 49,018,228 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_42/accel/DS_42-Free-RightThigh.csv
+  Loaded 48,186,614 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_42/label/DS_42-Free-label.csv
+  Loaded 3143 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightThigh/DS_42_synced.csv
+  Done. 48,186,614 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_87/accel/DS_87-Free-RightThigh.csv
+  Loaded 49,280,800 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_87/label/DS_87-Free-label.csv
+  Loaded 2462 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightThigh/DS_87_synced.csv
+  Done. 49,280,800 rows saved.
+
+--- Summary ---
+[OK] DS_10
+[OK] DS_138
+[OK] DS_139
+[OK] DS_140
+[OK] DS_235
+[OK] DS_239
+[OK] DS_240
+[OK] DS_246
+[OK] DS_36
+[OK] DS_37
+[OK] DS_38
+[OK] DS_39
+[OK] DS_42
+[OK] DS_44
+[OK] DS_48
+[OK] DS_49
+[OK] DS_51
+[OK] DS_58
+[OK] DS_59
+[OK] DS_87
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_10/accel/DS_10-Free-RightThigh.csv
+  Loaded 53,055,319 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_10/label/DS_10-Free-label.csv
+  Loaded 2416 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightThigh/DS_10_synced.csv
+  Done. 53,055,319 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_49/accel/DS_49-Free-RightThigh.csv
+  Loaded 48,141,120 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_49/label/DS_49-Free-label.csv
+  Loaded 1635 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightThigh/DS_49_synced.csv
+  Done. 48,141,120 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_239/accel/DS_239-Free-RightThigh.csv
+  Loaded 50,198,640 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_239/label/DS_239-Free-label.csv
+  Loaded 1909 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightThigh/DS_239_synced.csv
+  Done. 50,198,640 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_48/accel/DS_48-Free-RightThigh.csv
+  Loaded 48,426,240 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_48/label/DS_48-Free-label.csv
+  Loaded 2616 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightThigh/DS_48_synced.csv
+  Done. 48,426,240 rows saved.
+Reading accel: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_59/accel/DS_59-Free-RightThigh.csv
+  Loaded 47,630,293 rows
+Reading labels: /scratch/bates.car/datasets/paaws_fl/PAAWS_FreeLiving/DS_59/label/DS_59-Free-label.csv
+  Loaded 2479 label rows
+Merging...
+Writing: /scratch/bates.car/datasets/paaws_fl_synced/RightThigh/DS_59_synced.csv
+  Done. 47,630,293 rows saved.
+--- [RightThigh] Step 1 complete (Tue Apr  7 11:12:07 AM EDT 2026) ---
+
+--- [RightThigh] Step 2: Slice (Tue Apr  7 11:12:07 AM EDT 2026) ---
+Location:    RightThigh
+Input path:  /scratch/bates.car/datasets/paaws_fl_synced/RightThigh/
+Output path: /scratch/bates.car/datasets/paaws_fl_trimmed/RightThigh/
+Processing DS_10_synced.csv...
+  53,055,319 -> 35,444,303 rows (removed 17,611,016)
+Processing DS_138_synced.csv...
+  46,958,371 -> 28,225,085 rows (removed 18,733,286)
+Processing DS_139_synced.csv...
+  45,686,954 -> 26,261,159 rows (removed 19,425,795)
+Processing DS_140_synced.csv...
+  49,707,626 -> 23,570,042 rows (removed 26,137,584)
+Processing DS_235_synced.csv...
+  45,177,741 -> 23,455,609 rows (removed 21,722,132)
+Processing DS_239_synced.csv...
+  50,198,640 -> 24,134,144 rows (removed 26,064,496)
+Processing DS_240_synced.csv...
+  49,188,239 -> 25,752,587 rows (removed 23,435,652)
+Processing DS_246_synced.csv...
+  49,018,228 -> 28,442,150 rows (removed 20,576,078)
+Processing DS_36_synced.csv...
+  48,163,210 -> 28,542,590 rows (removed 19,620,620)
+Processing DS_37_synced.csv...
+  48,103,639 -> 29,046,083 rows (removed 19,057,556)
+Processing DS_38_synced.csv...
+  48,365,995 -> 29,583,246 rows (removed 18,782,749)
+Processing DS_39_synced.csv...
+  47,977,051 -> 27,580,465 rows (removed 20,396,586)
+Processing DS_42_synced.csv...
+  48,186,614 -> 27,339,593 rows (removed 20,847,021)
+Processing DS_44_synced.csv...
+  48,200,000 -> 26,163,361 rows (removed 22,036,639)
+Processing DS_48_synced.csv...
+  48,426,240 -> 27,102,282 rows (removed 21,323,958)
+Processing DS_49_synced.csv...
+  48,141,120 -> 30,323,048 rows (removed 17,818,072)
+Processing DS_51_synced.csv...
+  48,337,020 -> 20,951,406 rows (removed 27,385,614)
+Processing DS_58_synced.csv...
+  48,063,200 -> 27,897,910 rows (removed 20,165,290)
+Processing DS_59_synced.csv...
+  47,630,293 -> 28,206,656 rows (removed 19,423,637)
+Processing DS_87_synced.csv...
+  49,280,800 -> 27,649,330 rows (removed 21,631,470)
+Done.
+--- [RightThigh] Step 2 complete (Tue Apr  7 11:15:48 AM EDT 2026) ---
+
+--- [RightThigh] Step 3: Preprocessing (Tue Apr  7 11:15:48 AM EDT 2026) ---
+Location:    RightThigh
+Input path:  /scratch/bates.car/datasets/paaws_fl_trimmed/RightThigh/
+Output path: /scratch/bates.car/datasets/paaws_fl_preprocessed/RightThigh/
+Found 20 subjects
+  Loading DS_10...
+  Dropped 10,198,678 rows with invalid/unmapped labels (25,245,625 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 31557 windows
+  Loading DS_138...
+  Dropped 7,857,440 rows with invalid/unmapped labels (20,367,645 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 25459 windows
+  Loading DS_139...
+  Dropped 10,342,507 rows with invalid/unmapped labels (15,918,652 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 19898 windows
+  Loading DS_140...
+  Dropped 10,346,447 rows with invalid/unmapped labels (13,223,595 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 16529 windows
+  Loading DS_235...
+  Dropped 6,353,305 rows with invalid/unmapped labels (17,102,304 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 21377 windows
+  Loading DS_239...
+  Dropped 6,655,872 rows with invalid/unmapped labels (17,478,272 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 21847 windows
+  Loading DS_240...
+  Dropped 8,015,251 rows with invalid/unmapped labels (17,737,336 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 22171 windows
+  Loading DS_246...
+  Dropped 7,582,506 rows with invalid/unmapped labels (20,859,644 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 26074 windows
+  Loading DS_36...
+  Dropped 5,427,861 rows with invalid/unmapped labels (23,114,729 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 28893 windows
+  Loading DS_37...
+  Dropped 8,106,336 rows with invalid/unmapped labels (20,939,747 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 26174 windows
+  Loading DS_38...
+  Dropped 5,069,675 rows with invalid/unmapped labels (24,513,571 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 30641 windows
+  Loading DS_39...
+  Dropped 5,846,602 rows with invalid/unmapped labels (21,733,863 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 27167 windows
+  Loading DS_42...
+  Dropped 4,977,620 rows with invalid/unmapped labels (22,361,973 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 27952 windows
+  Loading DS_44...
+  Dropped 3,306,144 rows with invalid/unmapped labels (22,857,217 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 28571 windows
+  Loading DS_48...
+  Dropped 6,364,156 rows with invalid/unmapped labels (20,738,126 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 25922 windows
+  Loading DS_49...
+  Dropped 4,866,343 rows with invalid/unmapped labels (25,456,705 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 31820 windows
+  Loading DS_51...
+  Dropped 6,368,844 rows with invalid/unmapped labels (14,582,562 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 18228 windows
+  Loading DS_58...
+  Dropped 9,576,084 rows with invalid/unmapped labels (18,321,826 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 22902 windows
+  Loading DS_59...
+  Dropped 8,682,052 rows with invalid/unmapped labels (19,524,604 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 24405 windows
+  Loading DS_87...
+  Dropped 11,039,483 rows with invalid/unmapped labels (16,609,847 remaining)
+  Resampling from 80Hz to 30Hz...
+  Creating 10s windows...
+  Created 20762 windows
+
+Total windows: 498349
+Saved to /scratch/bates.car/datasets/paaws_fl_preprocessed/RightThigh/windows.npy
+--- [RightThigh] Step 3 complete (Tue Apr  7 11:21:37 AM EDT 2026) ---
+
+--- [RightThigh] Step 4: Feature extraction (Tue Apr  7 11:21:37 AM EDT 2026) ---
+Location:    RightThigh
+Input path:  /scratch/bates.car/datasets/paaws_fl_preprocessed/RightThigh/
+Output path: /scratch/bates.car/datasets/paaws_fl_features/RightThigh/
+Loading windows...
+Loaded 498349 windows
+Extracting features...
+  Processed 0/498349 windows
+  Processed 1000/498349 windows
+  Processed 2000/498349 windows
+  Processed 3000/498349 windows
+  Processed 4000/498349 windows
+  Processed 5000/498349 windows
+  Processed 6000/498349 windows
+  Processed 7000/498349 windows
+  Processed 8000/498349 windows
+  Processed 9000/498349 windows
+  Processed 10000/498349 windows
+  Processed 11000/498349 windows
+  Processed 12000/498349 windows
+  Processed 13000/498349 windows
+  Processed 14000/498349 windows
+  Processed 15000/498349 windows
+  Processed 16000/498349 windows
+  Processed 17000/498349 windows
+  Processed 18000/498349 windows
+  Processed 19000/498349 windows
+  Processed 20000/498349 windows
+  Processed 21000/498349 windows
+  Processed 22000/498349 windows
+  Processed 23000/498349 windows
+  Processed 24000/498349 windows
+  Processed 25000/498349 windows
+  Processed 26000/498349 windows
+  Processed 27000/498349 windows
+  Processed 28000/498349 windows
+  Processed 29000/498349 windows
+  Processed 30000/498349 windows
+  Processed 31000/498349 windows
+  Processed 32000/498349 windows
+  Processed 33000/498349 windows
+  Processed 34000/498349 windows
+  Processed 35000/498349 windows
+  Processed 36000/498349 windows
+  Processed 37000/498349 windows
+  Processed 38000/498349 windows
+  Processed 39000/498349 windows
+  Processed 40000/498349 windows
+  Processed 41000/498349 windows
+  Processed 42000/498349 windows
+  Processed 43000/498349 windows
+  Processed 44000/498349 windows
+  Processed 45000/498349 windows
+  Processed 46000/498349 windows
+  Processed 47000/498349 windows
+  Processed 48000/498349 windows
+  Processed 49000/498349 windows
+  Processed 50000/498349 windows
+  Processed 51000/498349 windows
+  Processed 52000/498349 windows
+  Processed 53000/498349 windows
+  Processed 54000/498349 windows
+  Processed 55000/498349 windows
+  Processed 56000/498349 windows
+  Processed 57000/498349 windows
+  Processed 58000/498349 windows
+  Processed 59000/498349 windows
+  Processed 60000/498349 windows
+  Processed 61000/498349 windows
+  Processed 62000/498349 windows
+  Processed 63000/498349 windows
+  Processed 64000/498349 windows
+  Processed 65000/498349 windows
+  Processed 66000/498349 windows
+  Processed 67000/498349 windows
+  Processed 68000/498349 windows
+  Processed 69000/498349 windows
+  Processed 70000/498349 windows
+  Processed 71000/498349 windows
+  Processed 72000/498349 windows
+  Processed 73000/498349 windows
+  Processed 74000/498349 windows
+  Processed 75000/498349 windows
+  Processed 76000/498349 windows
+  Processed 77000/498349 windows
+  Processed 78000/498349 windows
+  Processed 79000/498349 windows
+  Processed 80000/498349 windows
+  Processed 81000/498349 windows
+  Processed 82000/498349 windows
+  Processed 83000/498349 windows
+  Processed 84000/498349 windows
+  Processed 85000/498349 windows
+  Processed 86000/498349 windows
+  Processed 87000/498349 windows
+  Processed 88000/498349 windows
+  Processed 89000/498349 windows
+  Processed 90000/498349 windows
+  Processed 91000/498349 windows
+  Processed 92000/498349 windows
+  Processed 93000/498349 windows
+  Processed 94000/498349 windows
+  Processed 95000/498349 windows
+  Processed 96000/498349 windows
+  Processed 97000/498349 windows
+  Processed 98000/498349 windows
+  Processed 99000/498349 windows
+  Processed 100000/498349 windows
+  Processed 101000/498349 windows
+  Processed 102000/498349 windows
+  Processed 103000/498349 windows
+  Processed 104000/498349 windows
+  Processed 105000/498349 windows
+  Processed 106000/498349 windows
+  Processed 107000/498349 windows
+  Processed 108000/498349 windows
+  Processed 109000/498349 windows
+  Processed 110000/498349 windows
+  Processed 111000/498349 windows
+  Processed 112000/498349 windows
+  Processed 113000/498349 windows
+  Processed 114000/498349 windows
+  Processed 115000/498349 windows
+  Processed 116000/498349 windows
+  Processed 117000/498349 windows
+  Processed 118000/498349 windows
+  Processed 119000/498349 windows
+  Processed 120000/498349 windows
+  Processed 121000/498349 windows
+  Processed 122000/498349 windows
+  Processed 123000/498349 windows
+  Processed 124000/498349 windows
+  Processed 125000/498349 windows
+  Processed 126000/498349 windows
+  Processed 127000/498349 windows
+  Processed 128000/498349 windows
+  Processed 129000/498349 windows
+  Processed 130000/498349 windows
+  Processed 131000/498349 windows
+  Processed 132000/498349 windows
+  Processed 133000/498349 windows
+  Processed 134000/498349 windows
+  Processed 135000/498349 windows
+  Processed 136000/498349 windows
+  Processed 137000/498349 windows
+  Processed 138000/498349 windows
+  Processed 139000/498349 windows
+  Processed 140000/498349 windows
+  Processed 141000/498349 windows
+  Processed 142000/498349 windows
+  Processed 143000/498349 windows
+  Processed 144000/498349 windows
+  Processed 145000/498349 windows
+  Processed 146000/498349 windows
+  Processed 147000/498349 windows
+  Processed 148000/498349 windows
+  Processed 149000/498349 windows
+  Processed 150000/498349 windows
+  Processed 151000/498349 windows
+  Processed 152000/498349 windows
+  Processed 153000/498349 windows
+  Processed 154000/498349 windows
+  Processed 155000/498349 windows
+  Processed 156000/498349 windows
+  Processed 157000/498349 windows
+  Processed 158000/498349 windows
+  Processed 159000/498349 windows
+  Processed 160000/498349 windows
+  Processed 161000/498349 windows
+  Processed 162000/498349 windows
+  Processed 163000/498349 windows
+  Processed 164000/498349 windows
+  Processed 165000/498349 windows
+  Processed 166000/498349 windows
+  Processed 167000/498349 windows
+  Processed 168000/498349 windows
+  Processed 169000/498349 windows
+  Processed 170000/498349 windows
+  Processed 171000/498349 windows
+  Processed 172000/498349 windows
+  Processed 173000/498349 windows
+  Processed 174000/498349 windows
+  Processed 175000/498349 windows
+  Processed 176000/498349 windows
+  Processed 177000/498349 windows
+  Processed 178000/498349 windows
+  Processed 179000/498349 windows
+  Processed 180000/498349 windows
+  Processed 181000/498349 windows
+  Processed 182000/498349 windows
+  Processed 183000/498349 windows
+  Processed 184000/498349 windows
+  Processed 185000/498349 windows
+  Processed 186000/498349 windows
+  Processed 187000/498349 windows
+  Processed 188000/498349 windows
+  Processed 189000/498349 windows
+  Processed 190000/498349 windows
+  Processed 191000/498349 windows
+  Processed 192000/498349 windows
+  Processed 193000/498349 windows
+  Processed 194000/498349 windows
+  Processed 195000/498349 windows
+  Processed 196000/498349 windows
+  Processed 197000/498349 windows
+  Processed 198000/498349 windows
+  Processed 199000/498349 windows
+  Processed 200000/498349 windows
+  Processed 201000/498349 windows
+  Processed 202000/498349 windows
+  Processed 203000/498349 windows
+  Processed 204000/498349 windows
+  Processed 205000/498349 windows
+  Processed 206000/498349 windows
+  Processed 207000/498349 windows
+  Processed 208000/498349 windows
+  Processed 209000/498349 windows
+  Processed 210000/498349 windows
+  Processed 211000/498349 windows
+  Processed 212000/498349 windows
+  Processed 213000/498349 windows
+  Processed 214000/498349 windows
+  Processed 215000/498349 windows
+  Processed 216000/498349 windows
+  Processed 217000/498349 windows
+  Processed 218000/498349 windows
+  Processed 219000/498349 windows
+  Processed 220000/498349 windows
+  Processed 221000/498349 windows
+  Processed 222000/498349 windows
+  Processed 223000/498349 windows
+  Processed 224000/498349 windows
+  Processed 225000/498349 windows
+  Processed 226000/498349 windows
+  Processed 227000/498349 windows
+  Processed 228000/498349 windows
+  Processed 229000/498349 windows
+  Processed 230000/498349 windows
+  Processed 231000/498349 windows
+  Processed 232000/498349 windows
+  Processed 233000/498349 windows
+  Processed 234000/498349 windows
+  Processed 235000/498349 windows
+  Processed 236000/498349 windows
+  Processed 237000/498349 windows
+  Processed 238000/498349 windows
+  Processed 239000/498349 windows
+  Processed 240000/498349 windows
+  Processed 241000/498349 windows
+  Processed 242000/498349 windows
+  Processed 243000/498349 windows
+  Processed 244000/498349 windows
+  Processed 245000/498349 windows
+  Processed 246000/498349 windows
+  Processed 247000/498349 windows
+  Processed 248000/498349 windows
+  Processed 249000/498349 windows
+  Processed 250000/498349 windows
+  Processed 251000/498349 windows
+  Processed 252000/498349 windows
+  Processed 253000/498349 windows
+  Processed 254000/498349 windows
+  Processed 255000/498349 windows
+  Processed 256000/498349 windows
+  Processed 257000/498349 windows
+  Processed 258000/498349 windows
+  Processed 259000/498349 windows
+  Processed 260000/498349 windows
+  Processed 261000/498349 windows
+  Processed 262000/498349 windows
+  Processed 263000/498349 windows
+  Processed 264000/498349 windows
+  Processed 265000/498349 windows
+  Processed 266000/498349 windows
+  Processed 267000/498349 windows
+  Processed 268000/498349 windows
+  Processed 269000/498349 windows
+  Processed 270000/498349 windows
+  Processed 271000/498349 windows
+  Processed 272000/498349 windows
+  Processed 273000/498349 windows
+  Processed 274000/498349 windows
+  Processed 275000/498349 windows
+  Processed 276000/498349 windows
+  Processed 277000/498349 windows
+  Processed 278000/498349 windows
+  Processed 279000/498349 windows
+  Processed 280000/498349 windows
+  Processed 281000/498349 windows
+  Processed 282000/498349 windows
+  Processed 283000/498349 windows
+  Processed 284000/498349 windows
+  Processed 285000/498349 windows
+  Processed 286000/498349 windows
+  Processed 287000/498349 windows
+  Processed 288000/498349 windows
+  Processed 289000/498349 windows
+  Processed 290000/498349 windows
+  Processed 291000/498349 windows
+  Processed 292000/498349 windows
+  Processed 293000/498349 windows
+  Processed 294000/498349 windows
+  Processed 295000/498349 windows
+  Processed 296000/498349 windows
+  Processed 297000/498349 windows
+  Processed 298000/498349 windows
+  Processed 299000/498349 windows
+  Processed 300000/498349 windows
+  Processed 301000/498349 windows
+  Processed 302000/498349 windows
+  Processed 303000/498349 windows
+  Processed 304000/498349 windows
+  Processed 305000/498349 windows
+  Processed 306000/498349 windows
+  Processed 307000/498349 windows
+  Processed 308000/498349 windows
+  Processed 309000/498349 windows
+  Processed 310000/498349 windows
+  Processed 311000/498349 windows
+  Processed 312000/498349 windows
+  Processed 313000/498349 windows
+  Processed 314000/498349 windows
+  Processed 315000/498349 windows
+  Processed 316000/498349 windows
+  Processed 317000/498349 windows
+  Processed 318000/498349 windows
+  Processed 319000/498349 windows
+  Processed 320000/498349 windows
+  Processed 321000/498349 windows
+  Processed 322000/498349 windows
+  Processed 323000/498349 windows
+  Processed 324000/498349 windows
+  Processed 325000/498349 windows
+  Processed 326000/498349 windows
+  Processed 327000/498349 windows
+  Processed 328000/498349 windows
+  Processed 329000/498349 windows
+  Processed 330000/498349 windows
+  Processed 331000/498349 windows
+  Processed 332000/498349 windows
+  Processed 333000/498349 windows
+  Processed 334000/498349 windows
+  Processed 335000/498349 windows
+  Processed 336000/498349 windows
+  Processed 337000/498349 windows
+  Processed 338000/498349 windows
+  Processed 339000/498349 windows
+  Processed 340000/498349 windows
+  Processed 341000/498349 windows
+  Processed 342000/498349 windows
+  Processed 343000/498349 windows
+  Processed 344000/498349 windows
+  Processed 345000/498349 windows
+  Processed 346000/498349 windows
+  Processed 347000/498349 windows
+  Processed 348000/498349 windows
+  Processed 349000/498349 windows
+  Processed 350000/498349 windows
+  Processed 351000/498349 windows
+  Processed 352000/498349 windows
+  Processed 353000/498349 windows
+  Processed 354000/498349 windows
+  Processed 355000/498349 windows
+  Processed 356000/498349 windows
+  Processed 357000/498349 windows
+  Processed 358000/498349 windows
+  Processed 359000/498349 windows
+  Processed 360000/498349 windows
+  Processed 361000/498349 windows
+  Processed 362000/498349 windows
+  Processed 363000/498349 windows
+  Processed 364000/498349 windows
+  Processed 365000/498349 windows
+  Processed 366000/498349 windows
+  Processed 367000/498349 windows
+  Processed 368000/498349 windows
+  Processed 369000/498349 windows
+  Processed 370000/498349 windows
+  Processed 371000/498349 windows
+  Processed 372000/498349 windows
+  Processed 373000/498349 windows
+  Processed 374000/498349 windows
+  Processed 375000/498349 windows
+  Processed 376000/498349 windows
+  Processed 377000/498349 windows
+  Processed 378000/498349 windows
+  Processed 379000/498349 windows
+  Processed 380000/498349 windows
+  Processed 381000/498349 windows
+  Processed 382000/498349 windows
+  Processed 383000/498349 windows
+  Processed 384000/498349 windows
+  Processed 385000/498349 windows
+  Processed 386000/498349 windows
+  Processed 387000/498349 windows
+  Processed 388000/498349 windows
+  Processed 389000/498349 windows
+  Processed 390000/498349 windows
+  Processed 391000/498349 windows
+  Processed 392000/498349 windows
+  Processed 393000/498349 windows
+  Processed 394000/498349 windows
+  Processed 395000/498349 windows
+  Processed 396000/498349 windows
+  Processed 397000/498349 windows
+  Processed 398000/498349 windows
+  Processed 399000/498349 windows
+  Processed 400000/498349 windows
+  Processed 401000/498349 windows
+  Processed 402000/498349 windows
+  Processed 403000/498349 windows
+  Processed 404000/498349 windows
+  Processed 405000/498349 windows
+  Processed 406000/498349 windows
+  Processed 407000/498349 windows
+  Processed 408000/498349 windows
+  Processed 409000/498349 windows
+  Processed 410000/498349 windows
+  Processed 411000/498349 windows
+  Processed 412000/498349 windows
+  Processed 413000/498349 windows
+  Processed 414000/498349 windows
+  Processed 415000/498349 windows
+  Processed 416000/498349 windows
+  Processed 417000/498349 windows
+  Processed 418000/498349 windows
+  Processed 419000/498349 windows
+  Processed 420000/498349 windows
+  Processed 421000/498349 windows
+  Processed 422000/498349 windows
+  Processed 423000/498349 windows
+  Processed 424000/498349 windows
+  Processed 425000/498349 windows
+  Processed 426000/498349 windows
+  Processed 427000/498349 windows
+  Processed 428000/498349 windows
+  Processed 429000/498349 windows
+  Processed 430000/498349 windows
+  Processed 431000/498349 windows
+  Processed 432000/498349 windows
+  Processed 433000/498349 windows
+  Processed 434000/498349 windows
+  Processed 435000/498349 windows
+  Processed 436000/498349 windows
+  Processed 437000/498349 windows
+  Processed 438000/498349 windows
+  Processed 439000/498349 windows
+  Processed 440000/498349 windows
+  Processed 441000/498349 windows
+  Processed 442000/498349 windows
+  Processed 443000/498349 windows
+  Processed 444000/498349 windows
+  Processed 445000/498349 windows
+  Processed 446000/498349 windows
+  Processed 447000/498349 windows
+  Processed 448000/498349 windows
+  Processed 449000/498349 windows
+  Processed 450000/498349 windows
+  Processed 451000/498349 windows
+  Processed 452000/498349 windows
+  Processed 453000/498349 windows
+  Processed 454000/498349 windows
+  Processed 455000/498349 windows
+  Processed 456000/498349 windows
+  Processed 457000/498349 windows
+  Processed 458000/498349 windows
+  Processed 459000/498349 windows
+  Processed 460000/498349 windows
+  Processed 461000/498349 windows
+  Processed 462000/498349 windows
+  Processed 463000/498349 windows
+  Processed 464000/498349 windows
+  Processed 465000/498349 windows
+  Processed 466000/498349 windows
+  Processed 467000/498349 windows
+  Processed 468000/498349 windows
+  Processed 469000/498349 windows
+  Processed 470000/498349 windows
+  Processed 471000/498349 windows
+  Processed 472000/498349 windows
+  Processed 473000/498349 windows
+  Processed 474000/498349 windows
+  Processed 475000/498349 windows
+  Processed 476000/498349 windows
+  Processed 477000/498349 windows
+  Processed 478000/498349 windows
+  Processed 479000/498349 windows
+  Processed 480000/498349 windows
+  Processed 481000/498349 windows
+  Processed 482000/498349 windows
+  Processed 483000/498349 windows
+  Processed 484000/498349 windows
+  Processed 485000/498349 windows
+  Processed 486000/498349 windows
+  Processed 487000/498349 windows
+  Processed 488000/498349 windows
+  Processed 489000/498349 windows
+  Processed 490000/498349 windows
+  Processed 491000/498349 windows
+  Processed 492000/498349 windows
+  Processed 493000/498349 windows
+  Processed 494000/498349 windows
+  Processed 495000/498349 windows
+  Processed 496000/498349 windows
+  Processed 497000/498349 windows
+  Processed 498000/498349 windows
+Extracted features from 498349 windows
+Saved to /scratch/bates.car/datasets/paaws_fl_features/RightThigh/features.npy
+Saved to /scratch/bates.car/datasets/paaws_fl_features/RightThigh/features.csv
+
+Feature columns: ['subject_id', 'window_id', 'label', 'x_mean', 'x_std', 'x_range', 'y_mean', 'y_std', 'y_range', 'z_mean', 'z_std', 'z_range', 'corr_xy', 'corr_xz', 'corr_yz', 'mag_mean', 'mag_std', 'mag_range', 'mag_mad', 'mag_kurtosis', 'mag_skew', 'dom_freq_1', 'dom_freq_2']
+Label distribution:
+shape: (5, 2)
+┌────────────┬────────┐
+│ label      ┆ len    │
+│ ---        ┆ ---    │
+│ str        ┆ u64    │
+╞════════════╪════════╡
+│ Sitting    ┆ 340339 │
+│ Lying_Down ┆ 59624  │
+│ Standing   ┆ 48347  │
+│ Walking    ┆ 48217  │
+│ Biking     ┆ 1822   │
+└────────────┴────────┘
+--- [RightThigh] Step 4 complete (Tue Apr  7 11:39:01 AM EDT 2026) ---
+
+--- [RightThigh] Step 5: Training (Tue Apr  7 11:39:01 AM EDT 2026) ---
+Location:    RightThigh
+Input path:  /scratch/bates.car/datasets/paaws_fl_features/RightThigh/
+Output path: /scratch/bates.car/datasets/paaws_fl_results/RightThigh/
+Loading features...
+Loaded 498349 samples, 20 features
+Subjects: 20
+Labels: ['Biking', 'Lying_Down', 'Sitting', 'Standing', 'Walking']
+
+============================================================
+Starting cross-validation with 20 subjects
+Using 5-fold subject-wise CV (7:1:2 split)
+
+--- Fold 1/5 ---
+Train: 14 subjects, Val: 2, Test: 4
+Train samples: 361682, Test samples: 93443
+Training Random Forest...
+Fold 1 Macro F1: 0.7873
+
+--- Fold 2/5 ---
+Train: 14 subjects, Val: 2, Test: 4
+Train samples: 351813, Test samples: 91469
+Training Random Forest...
+Fold 2 Macro F1: 0.6078
+
+--- Fold 3/5 ---
+Train: 14 subjects, Val: 2, Test: 4
+Train samples: 328951, Test samples: 112875
+Training Random Forest...
+Fold 3 Macro F1: 0.7216
+
+--- Fold 4/5 ---
+Train: 14 subjects, Val: 2, Test: 4
+Train samples: 342954, Test samples: 114265
+Training Random Forest...
+Fold 4 Macro F1: 0.6629
+
+--- Fold 5/5 ---
+Train: 14 subjects, Val: 2, Test: 4
+Train samples: 355036, Test samples: 86297
+Training Random Forest...
+Fold 5 Macro F1: 0.7279
+
+============================================================
+OVERALL RESULTS
+============================================================
+
+Macro F1 (all folds): 0.7895
+Mean Fold F1: 0.7015 ± 0.0612
+
+Classification Report:
+              precision    recall  f1-score   support
+
+      Biking       1.00      0.66      0.80      1822
+  Lying_Down       0.61      0.40      0.48     59624
+     Sitting       0.89      0.95      0.92    340339
+    Standing       0.85      0.88      0.86     48347
+     Walking       0.91      0.87      0.89     48217
+
+    accuracy                           0.87    498349
+   macro avg       0.85      0.75      0.79    498349
+weighted avg       0.86      0.87      0.86    498349
+
+
+Confusion Matrix:
+Classes: ['Biking' 'Lying_Down' 'Sitting' 'Standing' 'Walking']
+[[  1211      0    447    104     60]
+ [     0  24012  35548     37     27]
+ [     1  15529 322289   1916    604]
+ [     2     75   2234  42334   3702]
+ [     0     39    600   5665  41913]]
+
+Results saved to /scratch/bates.car/datasets/paaws_fl_results/RightThigh/cv_results.csv
+
+Training final model on all data...
+Model saved to /scratch/bates.car/datasets/paaws_fl_results/RightThigh/rf_model.joblib
+
+Top 10 Feature Importances:
+shape: (10, 2)
+┌───────────┬────────────┐
+│ feature   ┆ importance │
+│ ---       ┆ ---        │
+│ str       ┆ f64        │
+╞═══════════╪════════════╡
+│ y_mean    ┆ 0.229275   │
+│ z_mean    ┆ 0.187883   │
+│ mag_mean  ┆ 0.083551   │
+│ x_mean    ┆ 0.060892   │
+│ y_range   ┆ 0.05805    │
+│ mag_mad   ┆ 0.039632   │
+│ x_range   ┆ 0.039508   │
+│ x_std     ┆ 0.037765   │
+│ mag_range ┆ 0.035958   │
+│ mag_std   ┆ 0.033691   │
+└───────────┴────────────┘
+--- [RightThigh] Step 5 complete (Tue Apr  7 11:44:03 AM EDT 2026) ---
+
+==============================
+Pipeline complete: Tue Apr  7 11:44:03 AM EDT 2026
+==============================
