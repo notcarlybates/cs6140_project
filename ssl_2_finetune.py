@@ -30,6 +30,7 @@ Metrics: subject-wise macro F1, pooled macro F1, Cohen's Kappa (κ)
 
 import argparse
 import os
+import shutil
 import sys
 
 import numpy as np
@@ -190,7 +191,7 @@ def train_fold(model, train_loader, val_loader, device) -> nn.Module:
 def run_fold(fold_num: int,
              train_wins: list, val_wins: list, test_wins: list,
              le: LabelEncoder, backbone_state: dict,
-             device: torch.device) -> dict:
+             device: torch.device, output_path: str = None) -> dict:
 
     n_classes = len(le.classes_)
 
@@ -225,6 +226,16 @@ def run_fold(fold_num: int,
     macro_f1 = f1_score(y_true, y_pred, average="macro", zero_division=0)
     kappa    = cohen_kappa_score(y_true, y_pred)
     sw_f1    = _subject_wise_f1(y_true, y_pred, subj_ids)
+
+    if output_path is not None:
+        ckpt_path = os.path.join(output_path, f"fold_{fold_num}_finetuned.pt")
+        torch.save({
+            "model_state_dict": model.state_dict(),
+            "label_classes": le.classes_.tolist(),
+            "fold": fold_num,
+            "macro_f1": macro_f1,
+        }, ckpt_path)
+        print(f"  Saved model to {ckpt_path}")
 
     print(f"  Fold {fold_num}: macro_F1={macro_f1:.4f}  "
           f"subject_F1={sw_f1:.4f}  kappa={kappa:.4f}")
@@ -314,7 +325,8 @@ def main():
         te_wins  = [w for s in te_s  for w in subj_wins[s]]
 
         result, fold_true, fold_pred = run_fold(
-            fold_num, tr_wins, val_wins, te_wins, le, backbone_state, device)
+            fold_num, tr_wins, val_wins, te_wins, le, backbone_state, device,
+            output_path=output_path)
         all_results.append(result)
         all_true.extend(fold_true)
         all_pred.extend(fold_pred)
@@ -331,6 +343,12 @@ def main():
     print(f"Macro F1 (pooled):  {np.mean(mf1s):.4f} ± {np.std(mf1s):.4f}")
     print(f"Subject-wise F1:    {np.mean(swf1s):.4f} ± {np.std(swf1s):.4f}")
     print(f"Cohen's Kappa (κ):  {np.mean(kaps):.4f} ± {np.std(kaps):.4f}")
+
+    best_fold = max(all_results, key=lambda r: r["macro_f1"])["fold"]
+    best_src  = os.path.join(output_path, f"fold_{best_fold}_finetuned.pt")
+    best_dst  = os.path.join(output_path, "best_finetuned.pt")
+    shutil.copy2(best_src, best_dst)
+    print(f"Best fold: {best_fold} → saved as {best_dst}")
 
     out_csv = os.path.join(output_path, "cv_results.csv")
     pl.DataFrame(all_results).write_csv(out_csv)

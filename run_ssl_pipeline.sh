@@ -23,58 +23,33 @@ source "${SCRIPT_DIR}/.venv/bin/activate"
 
 LOCATIONS=("LeftWrist") #  "RightAnkle" "RightThigh"
 
-# # Create all required directories before anything runs
-# mkdir -p "${SCRIPT_DIR}/logs"
-# for LOCATION in "${LOCATIONS[@]}"; do
-#     mkdir -p "/scratch/bates.car/datasets/paaws_fl_synced/${LOCATION}"
-#     mkdir -p "/scratch/bates.car/datasets/paaws_fl_trimmed/${LOCATION}"
-#     mkdir -p "/scratch/bates.car/datasets/paaws_fl_preprocessed/${LOCATION}"
-#     mkdir -p "/scratch/bates.car/models/ssl_pretrained/${LOCATION}"
-#     mkdir -p "/scratch/bates.car/datasets/paaws_ssl_results/${LOCATION}"
-# done
+# Create output directories before running fine-tuning
+for LOCATION in "${LOCATIONS[@]}"; do
+    mkdir -p "/scratch/bates.car/datasets/paaws_ssl_results/${LOCATION}"
+done
 
 for LOCATION in "${LOCATIONS[@]}"; do
-#     echo ""
-#     echo "=============================="
-#     echo "Processing location: ${LOCATION}"
-#     echo "=============================="
+    # # Step 1: Sync accelerometer data with labels
+    # echo "--- [${LOCATION}] Step 1: Sync ($(date)) ---"
+    # python "${SCRIPT_DIR}/sync_paaws.py" --location "${LOCATION}"
 
-#     # Step 1: Sync accelerometer data with labels
-#     echo ""
-#     echo "--- [${LOCATION}] Step 1: Sync ($(date)) ---"
-#     python "${SCRIPT_DIR}/sync_paaws.py" --location "${LOCATION}"
-#     echo "--- [${LOCATION}] Step 1 complete ($(date)) ---"
+    # # Step 2: Slice (remove before/after collection rows)
+    # echo "--- [${LOCATION}] Step 2: Slice ($(date)) ---"
+    # python "${SCRIPT_DIR}/slice_data.py" --location "${LOCATION}"
 
-#     # Step 2: Slice (remove before/after collection rows)
-#     echo ""
-#     echo "--- [${LOCATION}] Step 2: Slice ($(date)) ---"
-#     python "${SCRIPT_DIR}/slice_data.py" --location "${LOCATION}"
-#     echo "--- [${LOCATION}] Step 2 complete ($(date)) ---"
-
-    # Step 3: Preprocessing (resample to 30 Hz + 10-second windowing)
-    # Shared with the RF pipeline — skip if windows.npy already exists
-    # echo ""
+    # # Step 3: Preprocessing (resample to 30 Hz + 10-second windowing)
     # echo "--- [${LOCATION}] Step 3: Preprocessing ($(date)) ---"
-    # WINDOWS_FILE="/scratch/bates.car/datasets/paaws_fl_preprocessed/${LOCATION}/windows.npy"
-    # if [ -f "${WINDOWS_FILE}" ]; then
-    #     echo "  windows.npy already exists, skipping preprocessing"
-    # else
-    #     python "${SCRIPT_DIR}/rf_1_preprocess.py" --location "${LOCATION}"
-    # fi
-    # echo "--- [${LOCATION}] Step 3 complete ($(date)) ---"
+    # python "${SCRIPT_DIR}/rf_1_preprocess.py" --location "${LOCATION}"
 
-    # Step 4: SSL pre-training
-    echo ""
-    echo "--- [${LOCATION}] Step 4: SSL pre-training ($(date)) ---"
-    python "${SCRIPT_DIR}/ssl_1_pretrain.py" \
-        --location "${LOCATION}" \
-        --epochs 20 \
-        --n-subjects-per-batch 4 \
-        --n-windows-per-subject 1500
-    echo "--- [${LOCATION}] Step 4 complete ($(date)) ---"
+    # # Step 4: SSL pre-training
+    # echo "--- [${LOCATION}] Step 4: SSL pre-training ($(date)) ---"
+    # python "${SCRIPT_DIR}/ssl_1_pretrain.py" \
+    #     --location "${LOCATION}" \
+    #     --epochs 20 \
+    #     --n-subjects-per-batch 4 \
+    #     --n-windows-per-subject 1500
 
-    # Step 5: Downstream fine-tuning + evaluation
-    echo ""
+    # Step 5: Downstream fine-tuning + evaluation (saves fold weights + best_finetuned.pt)
     echo "--- [${LOCATION}] Step 5: Fine-tuning ($(date)) ---"
     python "${SCRIPT_DIR}/ssl_2_finetune.py" \
         --location "${LOCATION}" \
@@ -83,10 +58,9 @@ for LOCATION in "${LOCATIONS[@]}"; do
 
 done
 
-echo ""
-echo "--- Step 6: Comparing SSL vs RF results ($(date)) ---"
-python "${SCRIPT_DIR}/ssl_3_compare.py"
-echo "--- Step 6 complete ($(date)) ---"
+# # Step 6: Compare SSL vs RF results
+# echo "--- Step 6: Comparing SSL vs RF results ($(date)) ---"
+# python "${SCRIPT_DIR}/ssl_3_compare.py"
 
 echo ""
 echo "=============================="
